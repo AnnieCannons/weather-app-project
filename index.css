@@ -3,6 +3,7 @@ body {
     margin: 0;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -96,7 +97,6 @@ h1 {
 
 @media (max-width: 550px) {
     .header {
-        height: 50vh;
         border-radius: 100px;
         width: 90vw;
         /* background: linear-gradient(130deg,
