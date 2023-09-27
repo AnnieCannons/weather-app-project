@@ -16,13 +16,13 @@ body {
     height: 70vh;
     width: 50vw;
     border-radius: 100px;
-    /* background: linear-gradient(130deg,
+    background: linear-gradient(130deg,
             hsla(0, 0%, 100%, 0.333) 0%,
             hsla(208, 66%, 39%, 0.397) 33%,
             hsla(206, 59%, 57%, 0.729) 50%,
             hsla(204, 76%, 71%, 0.634) 67%,
             hsla(197, 86%, 57%, 0.866) 100%),
-            url('https://cbs4local.com/resources/media2/16x9/full/1015/center/80/62a73c6d-de35-40d5-b1e6-a5f8180ad950-large16x9_MicrosoftTeamsimage1.png'); */
+            url('https://cbs4local.com/resources/media2/16x9/full/1015/center/80/62a73c6d-de35-40d5-b1e6-a5f8180ad950-large16x9_MicrosoftTeamsimage1.png');
 }
 
 h1 {
@@ -96,9 +96,16 @@ h1 {
 
 @media (max-width: 550px) {
     .header {
-        height: 100vh;
-        border-radius: 0;
-        width: auto;
+        height: 50vh;
+        border-radius: 100px;
+        width: 90vw;
+        background: linear-gradient(130deg,
+        hsla(0, 0%, 100%, 0.333) 0%,
+        hsla(208, 66%, 39%, 0.397) 33%,
+        hsla(206, 59%, 57%, 0.729) 50%,
+        hsla(204, 76%, 71%, 0.634) 67%,
+        hsla(197, 86%, 57%, 0.866) 100%),
+        url('https://cbs4local.com/resources/media2/16x9/full/1015/center/80/62a73c6d-de35-40d5-b1e6-a5f8180ad950-large16x9_MicrosoftTeamsimage1.png');
     }
 
     h1 {
@@ -108,12 +115,12 @@ h1 {
 
     #searchInput {
         font-size: 5vw;
-        width: 80vw;
+        width: 60vw;
     }
 
     #searchButton {
         font-size: 5vw;
-        width: 80vw;
+        width: 50vw;
     }
 }
 
