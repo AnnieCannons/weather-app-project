@@ -45,7 +45,7 @@ h1 {
     font-size: 1.4em;
     width: 300px;
     height: 45px;
-    background-color: rgba(229, 229, 229, 0.689);
+    background-color: rgba(0, 0, 0, 0.129);
     border: none;
     font-family: "Nunito Sans", sans-serif;
     padding: 15px;
@@ -54,18 +54,24 @@ h1 {
     margin-bottom: 25px;
     border-radius: 50px;
     border: 1px solid rgb(255, 255, 118);
+    color: white;
+    letter-spacing: 4px;
 }
 
 #searchInput::placeholder {
-    color: white;
+    background-image: linear-gradient(to left, violet, rgb(99, 109, 255), rgb(0, 255, 247), green, yellow, orange, red);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+
 }
 
 #searchInput:hover {
-    background-color: rgba(240, 248, 255, 0.781);
+    border: 1px solid blue;
 }
 
 #searchInput:hover::placeholder{
-    color: rgba(159, 159, 159, 0.756);
+    letter-spacing: normal;
 }
 
 
@@ -73,7 +79,7 @@ h1 {
     font-size: 1.2em;
     width: 250px;
     border: none;
-    background-color: rgba(193, 243, 255, 0.628);
+    background-color: rgba(0, 0, 0, 0.366);
     height: auto;
     padding: 10px;
     font-family: "Nunito Sans", sans-serif;
@@ -86,14 +92,13 @@ h1 {
 #searchButton:hover {
     transform: scale(1.01);
     box-shadow: 0 0 3px rgb(255, 255, 255), 0 0 6px rgb(255, 255, 255);
-    background-color: rgba(240, 248, 255, 0.839);
-    color: rgba(0, 0, 0, 0.634);
+    border: 1px solid blue;
 }
 
 #searchButton:active {
     background-color: dimgray;
-    color: white;
 }
+
 
 @media (max-width: 550px) {
     .header {
