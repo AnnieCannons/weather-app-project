@@ -15,16 +15,16 @@
 
 
 //declared variables for later use within this file
-
+let cityLink = '';
 let date = '';
 let dayCall = "";
 
-//main object to store new dates with future forecast information
+//future forecast object information
 let futureTemp = {
 
 }
 
-//todays weather information
+//todays weather object information
 let todayTemp = {
         currentTemp: "",
     };
@@ -45,15 +45,14 @@ let today = document.getElementsByClassName("today");
         }
 
 //attach the input value into it's proper location in the API link
- let cityLink = `http://api.weatherapi.com/v1/forecast.json?key=8b78ddff94f24e8087b182603232609&q=${cityFromUser}&days=${4}&aqi=no&alerts=no`;
-    console.log(cityLink);
+        cityLink = `http://api.weatherapi.com/v1/forecast.json?key=8b78ddff94f24e8087b182603232609&q=${cityFromUser}&days=${4}&aqi=no&alerts=no`;
+   
 
  //maybe will make an option for user to adjust the number of days they want to have forecasted. 
 //TBD CODE HERE
 
 
  //fetch API link
-
         fetch(cityLink)
         .then((response) => response.json())
         .then((data) => {
@@ -66,7 +65,6 @@ let today = document.getElementsByClassName("today");
             
 
  //make a shorter variable to hold the initial API call line
-
         dayCall = data.forecast.forecastday;
 
 
@@ -91,11 +89,10 @@ let today = document.getElementsByClassName("today");
 })
 
 //testing results
-
 console.log(todayTemp);
 console.log(today);
 console.log(todayTemp.currentTemp);
-
+console.log(cityLink);
 console.log(futureTemp)
 
 
