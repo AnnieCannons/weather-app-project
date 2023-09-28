@@ -46,7 +46,7 @@ let today = document.getElementsByClassName("today");
 
 //attach the input value into it's proper location in the API link
         cityLink = `http://api.weatherapi.com/v1/forecast.json?key=8b78ddff94f24e8087b182603232609&q=${cityFromUser}&days=${4}&aqi=no&alerts=no`;
-   
+
 
  //maybe will make an option for user to adjust the number of days they want to have forecasted. 
 //TBD CODE HERE
