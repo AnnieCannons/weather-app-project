@@ -23,6 +23,7 @@ body {
     border-radius: 100px;
     overflow: hidden;
     box-shadow: inset 0 0 400px #ffffffcf;
+    position: fixed;
 }
 
 #weatherTitle {
@@ -39,13 +40,22 @@ body {
     color: rgba(245, 245, 245, 0);
     font-weight:600;
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: rgba(245, 245, 245, 0.742);
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.356);
+    -webkit-text-stroke-color: rgba(245, 245, 245, 0.803);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.467),0 0 70px rgb(0, 0, 0);
+}
+
+
+.searchBanner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 #searchInput {
     font-size: 1.4em;
-    width: 300px;
+    width: auto;
     height: 45px;
     background-color: rgba(0, 0, 0, 0.524);
     border: none;
@@ -66,8 +76,6 @@ body {
     -webkit-background-clip: text;
     -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: rgba(255, 255, 255, 0.538);
-   
-
 }
 
 
@@ -78,10 +86,10 @@ body {
 
 #searchButton {
     font-size: 1.2em;
-    width: 250px;
+    width: auto;
     border: none;
     background-color: rgba(0, 0, 0, 0.505);
-    height: auto;
+    height: 45px;
     padding: 10px;
     font-family: "Nunito Sans", sans-serif;
     color: whitesmoke;
@@ -113,19 +121,19 @@ body {
         url('https://cbs4local.com/resources/media2/16x9/full/1015/center/80/62a73c6d-de35-40d5-b1e6-a5f8180ad950-large16x9_MicrosoftTeamsimage1.png'); */
     }
 
-    h1 {
+    #weatherTitle {
         font-size: 11vw;
-        font-weight: bolder;
+        -webkit-text-stroke-color: rgba(254, 247, 247, 0.945);
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.467), 0 0 70px black;
+    }
+
+    #searchInput:placeholder{
+        font-size: 5vw;
     }
 
     #searchInput {
         font-size: 5vw;
-        width: 60vw;
-    }
-
-    #searchButton {
-        font-size: 5vw;
-        width: 50vw;
+        width: auto;
+        border-width: 3px;
     }
 }
-

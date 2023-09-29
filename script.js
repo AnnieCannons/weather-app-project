@@ -14,6 +14,8 @@
 // }
 
 
+
+
 //declared variables for later use within this file
 let cityLink = '';
 let date = '';
