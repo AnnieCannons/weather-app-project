@@ -6,11 +6,12 @@ function myFunction() {
     x.style.display = "none";
   }
 }
+
 let weather = {
-  apiKey: "05248674f7f142f79a5131928232409",
+  apiKey: "9f59f504483746d7b6b183745232909",
   fetchWeather: function (city) {
     fetch(
-      "http://api.weatherapi.com/v1/forecast.json?key=05248674f7f142f79a5131928232409&q=" +
+      "http://api.weatherapi.com/v1/forecast.json?key=9f59f504483746d7b6b183745232909&q=" +
         city +
         "&days=7&aqi=no&alerts=no",
     )
