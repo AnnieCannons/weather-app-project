@@ -6,7 +6,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: url('https://i.pinimg.com/736x/4f/3e/d6/4f3ed6ce172f1d4248805e9a25204d62.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 
 .header {
     display: flex;
@@ -15,18 +19,13 @@ body {
     align-items: center;
     justify-content: center;
     height: 70vh;
-    width: 50vw;
+    width: 90vw;
     border-radius: 100px;
-    /* background: linear-gradient(130deg,
-            hsla(0, 0%, 100%, 0.333) 0%,
-            hsla(208, 66%, 39%, 0.397) 33%,
-            hsla(206, 59%, 57%, 0.729) 50%,
-            hsla(204, 76%, 71%, 0.634) 67%,
-            hsla(197, 86%, 57%, 0.866) 100%),
-            url('https://cbs4local.com/resources/media2/16x9/full/1015/center/80/62a73c6d-de35-40d5-b1e6-a5f8180ad950-large16x9_MicrosoftTeamsimage1.png'); */
+    overflow: hidden;
+    box-shadow: inset 0 0 400px #ffffffcf;
 }
 
-h1 {
+#weatherTitle {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -37,15 +36,18 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 15px;
-    color: white;
+    color: rgba(245, 245, 245, 0);
     font-weight:600;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgba(245, 245, 245, 0.742);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.356);
 }
 
 #searchInput {
     font-size: 1.4em;
     width: 300px;
     height: 45px;
-    background-color: rgba(0, 0, 0, 0.129);
+    background-color: rgba(0, 0, 0, 0.524);
     border: none;
     font-family: "Nunito Sans", sans-serif;
     padding: 15px;
@@ -53,25 +55,24 @@ h1 {
     text-align: center;
     margin-bottom: 25px;
     border-radius: 50px;
-    border: 1px solid rgb(255, 255, 118);
-    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.673);
     letter-spacing: 4px;
 }
 
 #searchInput::placeholder {
-    background-image: linear-gradient(to left, violet, rgb(99, 109, 255), rgb(0, 255, 247), green, yellow, orange, red);
+    background-image: linear-gradient(to left, violet, rgb(99, 109, 255), rgb(0, 255, 247), green, yellow);
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.538);
+   
 
 }
 
-#searchInput:hover {
-    border: 1px solid blue;
-}
 
 #searchInput:hover::placeholder{
-    letter-spacing: normal;
+    opacity: 0.5;
 }
 
 
@@ -79,20 +80,19 @@ h1 {
     font-size: 1.2em;
     width: 250px;
     border: none;
-    background-color: rgba(0, 0, 0, 0.366);
+    background-color: rgba(0, 0, 0, 0.505);
     height: auto;
     padding: 10px;
     font-family: "Nunito Sans", sans-serif;
-    color: white;
+    color: whitesmoke;
     border-radius: 50px;
     cursor: pointer;
-    border: 1px solid rgb(255, 255, 118);
+    border: 1px solid rgb(255, 255, 239);
 }
 
 #searchButton:hover {
-    transform: scale(1.01);
     box-shadow: 0 0 3px rgb(255, 255, 255), 0 0 6px rgb(255, 255, 255);
-    border: 1px solid blue;
+    border: 1px solid whitesmoke;
 }
 
 #searchButton:active {
