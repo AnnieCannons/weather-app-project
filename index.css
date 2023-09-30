@@ -11,40 +11,53 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background: url('https://i.pinimg.com/736x/4f/3e/d6/4f3ed6ce172f1d4248805e9a25204d62.jpg'); 
+    background-image: linear-gradient(rgba(253, 253, 253, 0), rgba(0, 0, 0, 0.926)), url('https://i.pinimg.com/736x/4f/3e/d6/4f3ed6ce172f1d4248805e9a25204d62.jpg'); 
     background-size:cover;
     background-repeat:repeat-y;
     overflow: hidden;
+}
+
+
+/* .header {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    height: 75px;
+    background-color: black;
+} */
+
+
+body {
+    align-items: center;
     justify-content: center;
-    
 }
 
 
 .header {
-    margin: 10px;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 10px;
-    box-shadow: inset 0 0 50px #fffcfcd5, inset 0 0 0px rgba(53, 53, 53, 0.714), 0 0 5px rgb(227, 250, 255);
-    padding: 15px;
-    height: auto;
-    border-radius: 10px;
-    
+    justify-content: center;
+    height: 50vh;
+    width: 70vw;
+    gap: 30px;
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.225);
+    padding: 20px;
 }
+
 
 #weatherTitle {
     margin: 0;
-    font-size: 3.4rem;
+    font-size: 1.5em;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    color: rgba(0, 0, 0, 0.157);
-    font-weight:600;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: rgba(245, 245, 245, 0.803);
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.467),0 0 70px rgb(0, 0, 0);
+    color: transparent;
+    font-weight: lighter;
+    color: rgba(242, 254, 255, 0.742);
 }
 
 
@@ -57,24 +70,23 @@ body {
 }
 
 #searchInput {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: "Raleway",sans-serif;
-    padding: 10px 15px 10px 15px;
+    padding: 0px 25px 0px 25px;
     text-align: center;
     border-radius: 25px;
     letter-spacing: 4px;
-    border: 2px solid rgba(255, 255, 255, 0.85);
-    background-color: rgba(0, 0, 0, 0.457);
-    box-shadow: 0 0 4px black;
     cursor: text;
     color: white;
+   
+    background-color: rgba(0, 0, 0, 0.457);
+    box-shadow: inset 0 0 1px black;
 }
 
+
+
 #searchInput::placeholder {
-    background-image: linear-gradient(to left, rgb(84, 255, 204), rgb(208, 255, 107), rgb(141, 255, 251), rgb(108, 255, 108), rgb(255, 255, 106));
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
+    color: rgb(255, 255, 255);
     width: fit-content;
 }
 
@@ -83,18 +95,13 @@ body {
    opacity: 0.5;
 }
 
-#searchInput:hover {
-    border: 1px solid rgba(0, 0, 0, 0.675);
-}
-
 
 #searchButton {
     border-radius: 50px;
-    font-size: 20px;
+    font-size: 15px;
     padding: 5px;
-    border: 2px solid rgba(255, 255, 255, 0.85);
     background-color: rgba(0, 0, 0, 0.457);
-    box-shadow: 0 0 4px black;
+    box-shadow: inset 0 0 1px black;
     color: whitesmoke;
  
 
@@ -149,12 +156,10 @@ body {
 @media (max-width: 575px) {
 
     #searchInput {
-        border: 2px solid rgba(255, 255, 255, 0.85);
-        background-color: rgba(0, 0, 0, 0.457);
+      
     }
     
     #searchInput::placeholder {
-        color: rgb(255, 255, 255);
-        width: fit-content;
+  
     }
 }
