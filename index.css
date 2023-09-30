@@ -72,15 +72,15 @@ body {
 #searchInput {
     font-size: 1rem;
     font-family: "Raleway",sans-serif;
-    padding: 0px 25px 0px 25px;
+    padding: 5px 25px 5px 25px;
     text-align: center;
     border-radius: 25px;
     letter-spacing: 4px;
     cursor: text;
     color: white;
-   
-    background-color: rgba(0, 0, 0, 0.457);
-    box-shadow: inset 0 0 1px black;
+   background-color: black;
+    box-shadow: inset 0 0 3px rgb(255, 255, 255);
+  border-color: transparent;
 }
 
 
@@ -100,11 +100,11 @@ body {
     border-radius: 50px;
     font-size: 15px;
     padding: 5px;
-    background-color: rgba(0, 0, 0, 0.457);
-    box-shadow: inset 0 0 1px black;
-    color: whitesmoke;
- 
-
+    color: rgb(0, 0, 0);
+   background-color: transparent;
+    box-shadow: inset 0 0 3px rgb(255, 255, 255);
+  border-color: transparent;
+  cursor: pointer;
 }
 
 #searchButton:hover {
@@ -153,13 +153,4 @@ body {
  */
 
 
-@media (max-width: 575px) {
 
-    #searchInput {
-      
-    }
-    
-    #searchInput::placeholder {
-  
-    }
-}
