@@ -33,9 +33,7 @@ body {
     overflow-x: hidden;
 } */
 
-/* Landing Page*/
-
-.header  {
+.header {
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -47,18 +45,22 @@ body {
 }
 
 
-/* Initial Page*/
+/* body {
+    align-items: center;
+    justify-content: center;
+}
 
-
-
-/* .header.initial {
+.header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 60vh;
+    height: 50vh;
+    max-width: 600px;
     width: 70vw;
     gap: 30px;
+    transform: scale(1.1);
+    background-color: transparent;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.573);
 } */
@@ -131,29 +133,75 @@ body {
  
 }
 
-.hidden {
-    display:none;
-    opacity: 0;
+
+/* 
+@media (max-height: 700px) and (max-width: 700px) and (min-height: 400px) and (min-width: 250px) {
+    .header {
+        border-radius: 100px;
+        width: 90vw;
+        /* background: linear-gradient(130deg,
+        hsla(0, 0%, 100%, 0.333) 0%,
+        hsla(208, 66%, 39%, 0.397) 33%,
+        hsla(206, 59%, 57%, 0.729) 50%,
+        hsla(204, 76%, 71%, 0.634) 67%,
+        hsla(197, 86%, 57%, 0.866) 100%),
+        url('https://cbs4local.com/resources/media2/16x9/full/1015/center/80/62a73c6d-de35-40d5-b1e6-a5f8180ad950-large16x9_MicrosoftTeamsimage1.png'); *//*
+    }
+
+    #weatherTitle {
+        font-size: 11vw;
+        -webkit-text-stroke-color: rgba(254, 247, 247, 0.945);
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.467), 0 0 70px black;
+    }
+
+    #searchInput:placeholder{
+        font-size: 4.5vw;
+    }
+
+    #searchInput {
+        font-size: 5vw;
+        width: auto;
+        border-width: 3px;
+    }
 }
 
-.main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
+ */
+
+@media (max-width: 540px) {
+
+    /* .searchBanner {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        min-width: 350px;
+    }
+
+    .header {
+        min-width: 300px;
+    } */
+
+#weatherTitle {
+    font-size: 15px;
 }
 
-.content{
-    max-width: 90vw;
-    margin: 10px;
-    background-color: rgba(0, 0, 0, 0.48);
-    color: rgba(255, 255, 255, 0.73);
-    padding: 40px;
+
+.header {
+
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
-#date {
-    font-size: 30px;
-    color: red;
+#searchInput {
+    font-size: 14px;
+
 }
+
+
+
+}
+
+
