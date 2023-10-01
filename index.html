@@ -8,58 +8,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js" defer></script>
+    
     <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="media.css"/>
 
 </head>
-<body>
+<body class="initial">
 
-    
-    <!-- rain background
-    <div id="rain">
-    <i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i>
-    </div> -->
 
     <!-- main content -->
-    <div class="header">
+   
+<div class="main_header">
+    <div class="header initial">
     <h1 class="title" id="weatherTitle">Local Weather Report</h1>
 
     <div class="searchBanner">
-        
     <input type="text" class="input" id="searchInput" placeholder="Enter City Name">
-    <button type="button" class="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass icon"></i></button>
+    <button  type="button" class="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass icon"></i></button>
     </div>
     </div>
-
-<div class="primary" id="todaysResults">
-    <div class="today"></div>
 </div>
 
-<div class="secondary" id="futureResults">
-    <div class="day2 future"></div>
-    <div class="day3 future"></div>
-    <div class="day4 future"></div>
+<div class="overview">
+<div class=" hidden main" id="today">
+<div class="content hidden primary" id="todaysResults">
+  
 </div>
 
-<!-- <div class="currentContainer">
-    <div class="currentBox">
-        <p class="currentText">Current Temp</p>
-        <p class="currentText">Oakland, CA USA</p>
-        <p class="currentText">78</p>
-        <p class="currentText">Today's High: 85</p>
-        <p class="currentText">Today's Low: 56</p>
-        <p class="currentText">CHange of Precipitation: 41%</p>
+<div class="content hidden primary" id="today_message">
+
+</div>
+</div>
+
+
+<div class=" hidden main" id="future">
+<div class="content hidden secondary" id="futureResults1">
+    
+</div>
+
+<div class="content hidden secondary" id="futureResults2">
+
+</div>
+
+<div class="content hidden secondary" id="futureResults3">
+   
+</div>
+</div>
+
+<div class=" hidden main" >
+    <div class="content hidden footer" id="highestTemp">
     </div>
-    <div class="currentBox">
-        <p class="todaysSummary">It's hot today!</p>
-    </div>
-    <div class="currentBox">
-        <img src="" alt="" class="forecastIcon">
-    </div>
-</div>  -->
+</div>
+</div>
 
 
 
+<script src="script.js" defer></script>
 
 </body>
 </html>
