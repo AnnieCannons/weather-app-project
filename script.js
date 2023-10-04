@@ -21,20 +21,22 @@ futureResults = [1, 2, 3];
 let celsiusButton = document.querySelector("button.c");
 let todaySummary;
 let max;
-let searchList = document.querySelector(".search-list")
+let searchList = document.querySelector(".history-button")
 let hiddenConverter = document.querySelector(".hidden-converter");
 let hiddenMaincontent = document.querySelector(".hidden-maincontent");
 let initialHead = document.querySelector(".initial-header");
 let initialBody = document.querySelector(".initial-body");
 let recall = document.getElementsByClassName("recall");
-let input = [];
-let recallList;
+let searched = [];
+let recentList = document.getElementsByClassName("recent-list");
+let searchHistory = ''
+let searchInput;
 
 
 
 
         function onChange() {
-                cityFromUser = document.getElementById("searchInput").value;
+                cityFromUser = document.getElementById("search-input").value;
                 console.log(cityFromUser);
                 cityFromUser.trim();
 
@@ -43,13 +45,22 @@ let recallList;
                 }
 
 
+                searched.unshift(cityFromUser);
+                console.log(searched)
 
+              
+                for(let i = 0; i<searched.length; i++){
+                      
+                        searchHistory +=  (`
+                        <div class="recent-list">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <p>${searched[i]}</p>
+                        </div>
+                        `)
+                }
+                
+      recentList.textContent = searchHistory;
 
-                // for(let i = 0; i<input.length; i++){
-                //         let recallList = document.createElement('p')
-                //         recallList.textContent = input
-                //         document.getElementsByClassName("recall").appendChild(recallList)
-                // }
 
                 function addRemove () {
                 hiddenConverter.classList.remove("hidden-converter");
@@ -58,7 +69,7 @@ let recallList;
                 initialHead.classList.add("header");
                 initialBody.classList.remove("initial-body");
                 initialBody.classList.add("body");
-                searchList.classList.add("history-list")
+                searchList.classList.add("history-active")
                 }
                 addRemove();
 
@@ -66,8 +77,11 @@ let recallList;
                 cityLink = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityFromUser}&days=${4}&aqi=no&alerts=no`;
 
                 fetch(cityLink)
+
                         .then((response) => response.json())
                         .then((data) => {
+
+                        
                                 function getDayOfWeek(date) {
                                         let daysOfWeek = [
                                                 "Sunday",
@@ -93,33 +107,35 @@ let recallList;
 
                                 dayCall = data.forecast.forecastday;
 
+                               
+
                                 today = {
                                         date: (document.querySelector(
-                                                `#todaysResults .date`
+                                                `#todays-results .date`
                                         ).textContent = `Today`),
 
                                         located: (document.querySelector(
-                                                `#todaysResults .located`
+                                                `#todays-results .located`
                                         ).textContent = `${data.location.name}, ${data.location.region}`),
 
                                         currentTemp: (document.querySelector(
-                                                `#todaysResults .currentTemp`
+                                                `#todays-results .currentTemp`
                                         ).textContent = `Currently: ${data.current.temp_f}°F`),
 
                                         feelslike: (document.querySelector(
-                                                `#todaysResults .maxtemp`
+                                                `#todays-results .maxtemp`
                                         ).textContent = `Today's High: ${dayCall[0].day.maxtemp_f}°F`),
 
                                         maxtemp: (document.querySelector(
-                                                `#todaysResults .mintemp`
+                                                `#todays-results .mintemp`
                                         ).textContent = `Todays Low: ${dayCall[0].day.mintemp_f}°F`),
 
                                         mintemp: (document.querySelector(
-                                                `#todaysResults .feelslike`
+                                                `#todays-results .feelslike`
                                         ).textContent = `Feels Like: ${data.current.feelslike_f}°F`),
 
                                         chanceOfRain: (document.querySelector(
-                                                `#todaysResults .chance-of-rain`
+                                                `#todays-results .chance-of-rain`
                                         ).textContent = `Chance of Rain: ${dayCall[0].day.daily_chance_of_rain}%`),
                                 };
 
@@ -170,7 +186,12 @@ let recallList;
                                                 `#today_message .todaySummary`
                                         ).textContent = `Its Cold Today!`;
                                 }
+                        
+                        
+                                
                         })
+                
+                
         }
 
 
@@ -194,31 +215,31 @@ celsiusButton.addEventListener("click", function celsius() {
 
                                 today = {
                                         date: (document.querySelector(
-                                                `#todaysResults .date`
+                                                `#todays-results .date`
                                         ).textContent = `Today`),
 
                                         located: (document.querySelector(
-                                                `#todaysResults .located`
+                                                `#todays-results .located`
                                         ).textContent = `${data.location.name}, ${data.location.region}`),
 
                                         currentTemp: (document.querySelector(
-                                                `#todaysResults .currentTemp`
+                                                `#todays-results .currentTemp`
                                         ).textContent = `Currently: ${data.current.temp_f}°C`),
 
                                         feelslike: (document.querySelector(
-                                                `#todaysResults .maxtemp`
+                                                `#todays-results .maxtemp`
                                         ).textContent = `Today's High: ${dayCall[0].day.maxtemp_c}°C`),
 
                                         maxtemp: (document.querySelector(
-                                                `#todaysResults .mintemp`
+                                                `#todays-results .mintemp`
                                         ).textContent = `Todays Low: ${dayCall[0].day.mintemp_c}°C`),
 
                                         mintemp: (document.querySelector(
-                                                `#todaysResults .feelslike`
+                                                `#todays-results .feelslike`
                                         ).textContent = `Feels Like: ${data.current.feelslike_c}°C`),
 
                                         chanceOfRain: (document.querySelector(
-                                                `#todaysResults .chance-of-rain`
+                                                `#todays-results .chance-of-rain`
                                         ).textContent = `Chance of Rain: ${dayCall[0].day.daily_chance_of_rain}%`),
                                 };
 
@@ -270,5 +291,5 @@ celsiusButton.addEventListener("click", function celsius() {
                         }
                 }) })
         
-                console.log(input);
-                console.log(recall)
+                console.log(searched);
+                

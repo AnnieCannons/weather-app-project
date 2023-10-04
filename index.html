@@ -25,18 +25,23 @@
 <div class="main_header grid-container">
     <div class="initial-header grid-item">
         <div>
-            <h1 class="title mobileTitle" id="weatherTitle">Local Weather Report</h1>
+            <h1 class="title" id="weather-title">Local Weather Report</h1>
         </div>
-        <div class="search-list ">
+        <div class="search">
             <div>
-                <button type="button" class="submit searchButton" id="searchButton">
+                <button type="button" class="submit" id="search-button">
                     <i class="fa-solid fa-magnifying-glass icon" onclick="onChange()">
                     </i>
                 </button>
             </div>
-            <input type=text id="searchInput" placeholder="Enter City">
+            <input type=text id="search-input" placeholder="Enter City">
+            <button class="history-button ">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+            
             <div class="recent-search ">
             <h3>Recent Search</h3>
+            <div class="recent-list">
+            </div>
 
             </div>
         </div>
@@ -51,14 +56,14 @@
             <button type="button" class="convertButton "><i class=" fa-solid fa-circle-info"></i></button>
         <div class="tempSwitch">
             <button class="container c"><i class=" fa-solid fa-temperature-low"></i>Celsius</button>
-            <button  class="container f searchButton" onclick="onChange()"><i class=" fa-solid fa-temperature-low"></i>Fahrenheit</button>
+            <button  class="container f search-button" onclick="onChange()"><i class=" fa-solid fa-temperature-low"></i>Fahrenheit</button>
     </div>
 </div>
         
         
 <div class="hidden-maincontent overview grid-item">
         <div class=" main" id="today">
-                <div class="content primary" id="todaysResults">
+                <div class="content primary" id="todays-results">
                     <p class="date"></p>
                     <p class="located"></p>
                     <p class="currentTemp"></p>

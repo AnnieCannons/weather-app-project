@@ -11,14 +11,8 @@
     display: none;
 }
 
-.hidden {
-    height: 0px;
-    width: 0px;
-    opacity: 0;
-}
-
 .body {
-    background-image: url("https://i.pinimg.com/736x/4f/3e/d6/4f3ed6ce172f1d4248805e9a25204d62.jpg");
+    background-image: url("https://images.unsplash.com/photo-1544365558-35aa4afcf11f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmVvbiUyMHJhaW58ZW58MHx8MHx8fDA%3D&w=1000&q=80");
     background-size: cover;
     background-repeat: repeat;
     margin: 0;
@@ -39,15 +33,14 @@
 }
 
 .header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0)),url('https://c4.wallpaperflare.com/wallpaper/123/290/342/waves-water-sea-nature-wallpaper-preview.jpg');
     position: relative;
     width: 100vw;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    padding: 15px;
-    height: 75px;
+    padding: 20px;
+    height: 85px;
     box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.332), inset 0 0 20px rgb(0, 0, 0);
     
 }
@@ -80,19 +73,18 @@
     box-shadow: inset 0 0 20px rgb(255, 255, 255);
 }
 
-#weatherTitle {
+#weather-title {
     position: relative;
     margin: 5px;
-    font-size: 2em;
+    font-size: 1.8em;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: left;
+    text-align: center;
     font-weight: bolder;
-    padding: 10px;
     color: rgba(248, 254, 255, 0.979);
 
 }
 
-.search-list {
+.search {
 position: relative;
 display: flex;
 align-items: center;
@@ -101,7 +93,7 @@ box-shadow: inset 0 0 3px rgb(255, 255, 255);
 border-radius: 25px;
 }
 
-#searchInput {
+#search-input {
     display: flex;
     font-size: 18px;
     font-family: "Raleway", sans-serif;
@@ -117,7 +109,7 @@ border-radius: 25px;
 }
 
 
-#searchInput::placeholder {
+#search-input::placeholder {
     color: rgb(239, 239, 239);
     font-size:18px;
     text-align: left;
@@ -126,11 +118,19 @@ border-radius: 25px;
 }
 
 
+#search-input:hover{
+    color: rgba(222, 219, 219, 0.611);
+    }
+    #search-input:focus-within {
+        background-color: rgba(82, 82, 82, 0.334);
+        box-shadow:  0 0 10px rgb(0, 0, 0);
+    }
 
-#searchButton {
+
+#search-button {
     margin-right: 5px;
     font-size: 18px;
-    padding: 8px 30px 8px 30px;
+    padding: 10px 20px 5px 20px;
     color: rgb(255, 255, 255);
     background-color: transparent;
     border-color: transparent;
@@ -139,41 +139,57 @@ border-radius: 25px;
     border: none;
 }
 
-#searchButton:hover,
+#search-button:hover,
 .fa-magnifying-glass:hover {
     color: rgb(75, 141, 163);
     cursor: pointer;
 }
 
-#searchButton:active {
+#search-button:active {
     color: rgb(0, 255, 242);
 }
 
 
 .recent-search {
-    height: 400px;
+    height: auto;
+    border-radius: 25px;
     top: 60px;
-    width: 50vw;
-    margin-left: 15px;
+    right: 5vw;
     padding: 8px 30px 8px 30px;
     position: fixed;
-    background-color: rgb(255, 0, 0);
+    background-color: rgba(0, 0, 0, 0.809);
+    box-shadow:  0 0 50px white;
     color: white;
     display: none;
     
 }
 
-#searchInput:hover{
-color: rgba(222, 219, 219, 0.611);
-}
-#searchInput:focus-within {
-    background-color: rgba(82, 82, 82, 0.334);
-    box-shadow:  0 0 10px rgb(0, 0, 0);
+.recent-search h3 {
+    color: white;
 }
 
-.history-list:focus-within .recent-search {
+.recent-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: blue;
+}
+
+.history-button {
+    color: white;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    margin-right: 10px;
+    
+}
+
+.history-active:focus-within .recent-search {
 display: block;
 }
+
 
 .convert {
     margin-top: 10px;
@@ -181,7 +197,7 @@ display: block;
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 40px;
+    width: 150px;
     justify-content: left;
    background-color:transparent
 }
@@ -190,26 +206,35 @@ display: block;
     display: flex;
     flex-direction: column;
     justify-content: left;
-    padding:20px;
+    padding:5px;
     height: 100px;
+    width: 150px;
     gap: 20px;
     display: none;
     color: rgb(0, 0, 0);
-    background-color: transparent
+    background-color: transparent;
+    outline: none;
+    border: none;
 }
 
 .tempSwitch .container {
     display: flex;
-    color: rgba(0, 193, 174, 0.552);
-    font-size: 18;
+    padding: 8px;
+    border: 1px solid white;
+    border-radius: 50px;
+    box-shadow: inset0 0 20px black;
+    -webkit-text-stroke: 0.5px black;
+    color: white;
+    font-size: 20;
     cursor: pointer;
-    justify-content: left;
-    background-color: transparent;
-    border: none;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.842);
+    
+    
 }
 
 .fa-circle-info {
-    color: rgb(0, 0, 0);
+    color: rgba(0, 0, 0, 0.412);
     -webkit-text-stroke: 0.8px rgb(182, 255, 208);
     cursor: none;
 }
@@ -234,7 +259,8 @@ display: block;
 
 .convert:hover {
     height: 300px;
-    width: 250px;
+    width: 150px;
+    background-color: transparent;
 }
 
 
@@ -244,138 +270,25 @@ display: block;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
-    gap: 50px;
+    gap: 6vw;
     background-color: rgba(0, 0, 0, 0);
     margin-bottom:50px;
     text-align: center;
 }
 
 .content {
-    background-color: rgba(0, 0, 0, 0.703);
-    color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.778);
+    border-radius: 25px;
+    box-shadow: inset 0 0 20px rgb(135, 247, 255), inset 0 0 5px white;
+    position: relative;
+    color: rgb(254, 254, 254);
     padding: 25px;
     
 }
 
 .date {
     font-size: 30px;
-    color: rgb(74, 142, 6);
+    color: rgb(109, 187, 30);
 }
 
 
-@media (min-width: 700px) {
-    .recent-search {
-        width: 55vw;
-    }
-}
-
-
-
-@media (max-width: 650px) {
-
-    .initial-body {
-        background-image: url("https://i.pinimg.com/736x/4f/3e/d6/4f3ed6ce172f1d4248805e9a25204d62.jpg");
-        background-size: cover;
-        background-repeat: repeat;
-        margin: 0;
-        height: 100vh;
-        overflow-x: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .initial-header{
-        width:vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 15px;
-        height:50vh;
-        width: 80vw;
-        box-shadow: inset 0 0 0px rgb(0, 0, 0), inset 0 0 20px rgb(255, 255, 255);
-    }
-    
-
-    .header {
-        width: 100vw;
-        display: flex;
-        flex-direction: row;
-        padding: 10px 5px 10px 5px;
-        height: max-content;
-        justify-content: center;
-        align-items: center;
-    }
-
-
-    #weatherTitle {
-        padding: 5px;
-        margin: 5px;
-    }
-
-    .recent-search {
-        top: 75px;
-        margin-left: 5px;
-    }
-
-    .main {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .content {
-        height: auto;
-        font-size: 12px;
-        padding: 10px;
-        width: 80vw;
-        font-size:20px;
-    }
-
-    .tempSwitch .container {
-        font-size: 18px;
-        padding: 10px 15px 10px 0px;
-    }
-}
-
-
-@media (max-width: 475px) {
-
-
-    .initial-header{
-    min-height: 150px;
-    }
-
-   
-    #searchInput::placeholder {
-    font-size: 25px;
-    }
-
-    #searchInput {
-        font-size: 20px;
-    }
-
-    #weatherTitle {
-        display: none;
-    }
-
-    .recent-search {
-        top:60px;
-        margin-left: 25px;
-        width: 60vw;
-        }
-    
-
-  
-
-    .content {
-        width: 80vw;
-        font-size:20px;
-    }
-
-    
-}
