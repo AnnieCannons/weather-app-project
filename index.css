@@ -7,9 +7,18 @@
     overflow-x: hidden;
 }
 
-body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.765), rgba(0, 0, 0, 0.765), rgba(0, 0, 0, 0.765)),
-        url("https://i.pinimg.com/736x/4f/3e/d6/4f3ed6ce172f1d4248805e9a25204d62.jpg");
+.hidden-converter, .hidden-maincontent {
+    display: none;
+}
+
+.hidden {
+    height: 0px;
+    width: 0px;
+    opacity: 0;
+}
+
+.body {
+    background-image: url("https://i.pinimg.com/736x/4f/3e/d6/4f3ed6ce172f1d4248805e9a25204d62.jpg");
     background-size: cover;
     background-repeat: repeat;
     margin: 0;
@@ -17,8 +26,21 @@ body {
     overflow-x: hidden;
 }
 
+.initial-body {
+    background-image: url("https://i.pinimg.com/736x/4f/3e/d6/4f3ed6ce172f1d4248805e9a25204d62.jpg");
+    background-repeat: repeat;
+    margin: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
 
 .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0)),url('https://c4.wallpaperflare.com/wallpaper/123/290/342/waves-water-sea-nature-wallpaper-preview.jpg');
+    position: relative;
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -26,63 +48,95 @@ body {
     justify-content: space-evenly;
     padding: 15px;
     height: 75px;
-    background-color: rgba(168, 249, 255, 0);
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.332), inset 0 0 20px rgb(94, 94, 94);
-   
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.332), inset 0 0 20px rgb(0, 0, 0);
+    
 }
 
+
+.initial-header{
+   background-color: rgba(0, 0, 0, 0.696);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px;
+    height: 50vh;
+    width: 80vw;
+    box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.476), inset 0 0 5px white, 0 0 2px black;
+    max-width: 1000px;
+}
+
+.initial-header::before {    
+    content: "";
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/123/290/342/waves-water-sea-nature-wallpaper-preview.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.45;
+    box-shadow: inset 0 0 20px rgb(255, 255, 255);
+}
 
 #weatherTitle {
-    margin: 0;
-    font-size: 1.6em;
+    position: relative;
+    margin: 5px;
+    font-size: 2em;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    color: transparent;
-    font-weight: lighter;
-    color: rgba(242, 254, 255, 0.742);
+    text-align: left;
+    font-weight: bolder;
+    padding: 10px;
+    color: rgba(248, 254, 255, 0.979);
+
 }
 
-.searchBanner {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-   
-    gap: 10px;
+.search-list {
+position: relative;
+display: flex;
+align-items: center;
+background-color: transparent;
+box-shadow: inset 0 0 3px rgb(255, 255, 255);
+border-radius: 25px;
 }
 
 #searchInput {
-    font-size: 1.1rem;
+    display: flex;
+    font-size: 18px;
     font-family: "Raleway", sans-serif;
-    padding: 5px 25px 5px 25px;
-    text-align: center;
-    border-radius: 25px;
-    letter-spacing: 4px;
+    
     cursor: text;
     color: white;
     background-color: transparent;
-    box-shadow: inset 0 0 3px rgb(255, 255, 255);
     border-color: transparent;
+    text-overflow: ellipsis;
+    outline: none;
+    width: 50vw;
+    text-align: left;
 }
+
 
 #searchInput::placeholder {
-    color: rgb(255, 255, 255);
-    width: fit-content;
+    color: rgb(239, 239, 239);
+    font-size:18px;
+    text-align: left;
+    padding: 0;
+    margin: 0;
 }
 
-#searchInput:hover::placeholder {
-    opacity: 0.4;
-}
+
 
 #searchButton {
-    border-radius: 50px;
-    font-size: 15px;
-    padding: 8px;
-    color: rgb(194, 194, 194);
+    margin-right: 5px;
+    font-size: 18px;
+    padding: 8px 30px 8px 30px;
+    color: rgb(255, 255, 255);
     background-color: transparent;
-    box-shadow: inset 0 0 3px rgb(255, 255, 255);
     border-color: transparent;
     cursor: pointer;
-  
+    outline: none;
+    border: none;
 }
 
 #searchButton:hover,
@@ -92,32 +146,56 @@ body {
 }
 
 #searchButton:active {
-    box-shadow:
-        0 0 3px rgb(255, 255, 255),
-        0 0 6px rgb(255, 255, 255);
-} 
+    color: rgb(0, 255, 242);
+}
 
-.help {
+
+.recent-search {
+    height: 400px;
+    top: 60px;
+    width: 50vw;
+    margin-left: 15px;
+    padding: 8px 30px 8px 30px;
+    position: fixed;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    display: none;
+    
+}
+
+#searchInput:hover{
+color: rgba(222, 219, 219, 0.611);
+}
+#searchInput:focus-within {
+    background-color: rgba(82, 82, 82, 0.334);
+    box-shadow:  0 0 10px rgb(0, 0, 0);
+}
+
+.history-list:focus-within .recent-search {
+display: block;
+}
+
+.convert {
     margin-top: 10px;
-    height: 30px;
+    height: 55px;
     position: absolute;
     display: flex;
     flex-direction: column;
     width: 40px;
     justify-content: left;
-  
-
+   background-color:transparent
 }
 
 .tempSwitch {
     display: flex;
     flex-direction: column;
-    justify-content:left;
-    padding: 20px;
-    height: 200px;
+    justify-content: left;
+    padding:20px;
+    height: 100px;
     gap: 20px;
     display: none;
-  
+    color: rgb(0, 0, 0);
+    background-color: transparent
 }
 
 .tempSwitch .container {
@@ -130,20 +208,18 @@ body {
     border: none;
 }
 
-.fa-circle-info  {
-    color: rgba(0, 0, 0, 0);
+.fa-circle-info {
+    color: rgb(0, 0, 0);
     -webkit-text-stroke: 0.8px rgb(182, 255, 208);
-    cursor:none;
+    cursor: none;
 }
 
-
-.helpButton {
+.convertButton {
     display: flex;
     font-size: 25px;
     background-color: transparent;
     border: none;
     justify-content: left;
-  
 }
 
 .fa-circle-info:hover {
@@ -151,32 +227,34 @@ body {
     -webkit-text-stroke: 0.5px rgb(242, 245, 243);
 }
 
-.help:hover .tempSwitch {
+.convert:hover .tempSwitch {
     display: inherit;
+    height: 300px;
 }
 
-.help:hover {
+.convert:hover {
     height: 300px;
-    width: 150px;
+    width: 250px;
 }
-   
+
 
 .main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
     gap: 50px;
-   
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom:50px;
+    text-align: center;
 }
 
-
-
 .content {
-    background-color: rgba(0, 0, 0, 0);
-    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.703);
+    color: rgb(0, 0, 0);
     padding: 25px;
-  
+    
 }
 
 .date {
@@ -184,38 +262,62 @@ body {
     color: rgb(74, 142, 6);
 }
 
-@media (max-width: 600px) {
+
+@media (min-width: 700px) {
+    .recent-search {
+        width: 55vw;
+    }
+}
+
+
+
+@media (max-width: 650px) {
+
+    .initial-body {
+        background-image: url("https://i.pinimg.com/736x/4f/3e/d6/4f3ed6ce172f1d4248805e9a25204d62.jpg");
+        background-size: cover;
+        background-repeat: repeat;
+        margin: 0;
+        height: 100vh;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .initial-header{
+        width:vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        height:50vh;
+        width: 80vw;
+        box-shadow: inset 0 0 0px rgb(0, 0, 0), inset 0 0 20px rgb(255, 255, 255);
+    }
+    
 
     .header {
         width: 100vw;
         display: flex;
         flex-direction: row;
-        padding: 10px 0 10px 0;
+        padding: 10px 5px 10px 5px;
         height: max-content;
         justify-content: center;
         align-items: center;
     }
-    
-    .searchBanner {
-        flex-direction: column;
-        justify-content: stretch;
-        margin: 0;
-    }
 
-    
+
     #weatherTitle {
-       font-size: 4.2vw;
         padding: 5px;
         margin: 5px;
     }
 
-   
-
- #searchInput, #searchButton {
-    font-size: 3.2vw;
- }
-
-  
+    .recent-search {
+        top: 75px;
+        margin-left: 5px;
+    }
 
     .main {
         display: flex;
@@ -224,38 +326,56 @@ body {
         justify-content: center;
         align-items: center;
         text-align: center;
-        
     }
 
     .content {
         height: auto;
         font-size: 12px;
         padding: 10px;
+        width: 80vw;
+        font-size:20px;
     }
-
 
     .tempSwitch .container {
-        font-size:18px;
+        font-size: 18px;
         padding: 10px 15px 10px 0px;
     }
-
 }
 
-@media (max-width: 400px) {
 
-    .header {
-        display: flex;
-        flex-direction: column;
-        justify-content: stretch;
-        margin: 0;
+@media (max-width: 475px) {
+
+
+    .initial-header{
+    min-height: 150px;
     }
 
-    #searchInput, #searchButton {
-        font-size: 3.8w;
-     }
+   
+    #searchInput::placeholder {
+    font-size: 25px;
+    }
 
-     #weatherTitle {
-        font-size: 5vw;
-     }
+    #searchInput {
+        font-size: 20px;
+    }
 
+    #weatherTitle {
+        display: none;
+    }
+
+    .recent-search {
+        top:60px;
+        margin-left: 25px;
+        width: 60vw;
+        }
+    
+
+  
+
+    .content {
+        width: 80vw;
+        font-size:20px;
+    }
+
+    
 }
