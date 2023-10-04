@@ -32,13 +32,68 @@ let initialHead = document.querySelector(".initial-header");
 let initialBody = document.querySelector(".initial-body");
 let searchlist = document.querySelector('.searchlist');
 
-// (document.querySelector(
-// `#${dates[i]} .chance_of_rain`
-// ).textContent = `Chance of Rain: ${dayCall[i].day.daily_chance_of_rain}%`);
 
-// let futureBox = [
+
+
+
+
+
+
+
+
+
+
+
+
+// let futureBox;
+// let futureField;
+// let futureClass;
+// let futureId;
+// let futureChild;
+// let futureChildClass;
+// let childValue = [];
+// let childClass = [];
+
+
+// let futureChildValue = 
+// {
+//     date: `${getDayOfWeek(dayCall[i].date)}`, 
+//     avetemp: `Average  Temp: ${dayCall[i].day.avgtemp_f}°F`, 
+//     maxtemp: `Today's High: ${dayCall[i].day.maxtemp_f}°F`, 
+//     mintemp: `Todays Low: ${dayCall[i].day.mintemp_f}°F`, 
+//     chance_of_rain: `Chance of Rain: ${dayCall[i].day.daily_chance_of_rain}%`
+// }
+
+
+
+
+// futureBox = [
 //     (futureField = document.createElement('div')),
-//     (fieldClass = futureField.classList.add("content, secondary, 2")),
-//     (fieldId = futureField.setAttribute('id', ${dayValue.length}``))
-
+//     (futureClass = futureField.classList.add("content, secondary, ")),
+//     (futureId = futureField.setAttribute('id', `${dayValue.length}`)),
 // ]
+
+
+
+// futureBox = {
+
+//     futureField: document.createElement('div'),
+
+//     futureClass: futureField.classList.add("content, secondary, "),
+
+//     futureId: futureField.setAttribute('id', `future-value`),
+
+//     futureChild: document.createElement('p'),
+
+//     childClass: Object.keys(futureChildValue),
+
+//     childValue: Object.values(futureChildValue),
+
+    
+// }
+
+// for(let i = 0; i<5; i++) {
+//     futureBox.futureChild
+//     futureChild[i].setAttribute(childClass[i]);
+//     futureChild[i].innerHTML = childValue[i];
+// }

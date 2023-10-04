@@ -48,7 +48,7 @@ searchList.classList.add("history-active")
 addRemove();
 
 
-cityLink = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityFromUser}&days=${5}&aqi=no&alerts=no`;
+cityLink = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityFromUser}&days=${4}&aqi=no&alerts=no`;
 
 
 
