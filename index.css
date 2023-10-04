@@ -12,8 +12,8 @@
 }
 
 .body {
-    background-image: url("https://images.unsplash.com/photo-1544365558-35aa4afcf11f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmVvbiUyMHJhaW58ZW58MHx8MHx8fDA%3D&w=1000&q=80");
-    background-size: cover;
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/123/290/342/waves-water-sea-nature-wallpaper-preview.jpg");
+    background-size: contain;
     background-repeat: repeat;
     margin: 0;
     height: 100%;
@@ -41,7 +41,7 @@
     justify-content: space-evenly;
     padding: 20px;
     height: 85px;
-    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.332), inset 0 0 20px rgb(0, 0, 0);
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.849), inset 0 0 20px rgb(134, 134, 134);
     
 }
 
@@ -97,7 +97,6 @@ border-radius: 25px;
     display: flex;
     font-size: 18px;
     font-family: "Raleway", sans-serif;
-    
     cursor: text;
     color: white;
     background-color: transparent;
@@ -121,9 +120,10 @@ border-radius: 25px;
 #search-input:hover{
     color: rgba(222, 219, 219, 0.611);
     }
-    #search-input:focus-within {
-        background-color: rgba(82, 82, 82, 0.334);
-        box-shadow:  0 0 10px rgb(0, 0, 0);
+
+
+#search-input:focus-within {
+    color: rgba(222, 219, 219, 0.611);
     }
 
 
@@ -152,6 +152,7 @@ border-radius: 25px;
 
 .recent-search {
     height: auto;
+    width: 200px;
     border-radius: 25px;
     top: 60px;
     right: 5vw;
@@ -160,6 +161,8 @@ border-radius: 25px;
     background-color: rgba(0, 0, 0, 0.809);
     box-shadow:  0 0 50px white;
     color: white;
+    max-height: 210px;
+    overflow: hidden;
     display: none;
     
 }
@@ -168,13 +171,35 @@ border-radius: 25px;
     color: white;
 }
 
-.recent-list {
+.searchlist {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    background-color: blue;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.on-scrollbar {
+    scrollbar-width: thin;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+}
+
+.on-scrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+.on-scrollbar::-webkit-scrollbar {
+    width: 6px !important;
+    background-color: transparent;
+}
+
+.on-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #ffffff4d;
+
 }
 
 .history-button {
@@ -197,51 +222,45 @@ display: block;
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 150px;
+    width: 50px;
     justify-content: left;
-   background-color:transparent
+    align-items: center;
+   background-color:transparent;
 }
 
 .tempSwitch {
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    padding:5px;
-    height: 100px;
-    width: 150px;
+    margin-top: 15px;
     gap: 20px;
     display: none;
     color: rgb(0, 0, 0);
     background-color: transparent;
-    outline: none;
+
     border: none;
 }
 
 .tempSwitch .container {
     display: flex;
-    padding: 8px;
-    border: 1px solid white;
-    border-radius: 50px;
-    box-shadow: inset0 0 20px black;
+    border: none;
     -webkit-text-stroke: 0.5px black;
     color: white;
-    font-size: 20;
     cursor: pointer;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.842);
-    
-    
+    background-color: transparent;
 }
 
 .fa-circle-info {
-    color: rgba(0, 0, 0, 0.412);
-    -webkit-text-stroke: 0.8px rgb(182, 255, 208);
+    color: rgba(0, 0, 0, 0.984);
+    -webkit-text-stroke: 1px rgb(252, 252, 252);
     cursor: none;
+    outline: none;
+    border: none;
 }
+
 
 .convertButton {
     display: flex;
-    font-size: 25px;
+    font-size: 30px;
     background-color: transparent;
     border: none;
     justify-content: left;
@@ -249,18 +268,26 @@ display: block;
 
 .fa-circle-info:hover {
     color: rgba(0, 0, 0, 0.201);
-    -webkit-text-stroke: 0.5px rgb(242, 245, 243);
+    -webkit-text-stroke: 0.5px rgb(0, 207, 69);
 }
 
 .convert:hover .tempSwitch {
     display: inherit;
-    height: 300px;
+    background-color: transparent;
 }
 
 .convert:hover {
-    height: 300px;
-    width: 150px;
+    height: 120px;
     background-color: transparent;
+}
+
+.c, .f {
+    font-size: 15px;
+}
+
+.c:hover,
+.f:hover {
+    color: rgb(11, 180, 11);
 }
 
 
@@ -279,11 +306,11 @@ display: block;
 .content {
     background-color: rgba(0, 0, 0, 0.778);
     border-radius: 25px;
-    box-shadow: inset 0 0 20px rgb(135, 247, 255), inset 0 0 5px white;
+    box-shadow: inset 0 0 20px rgb(134, 134, 134), inset 0 0 5px white;
     position: relative;
     color: rgb(254, 254, 254);
     padding: 25px;
-    
+    position: static;
 }
 
 .date {

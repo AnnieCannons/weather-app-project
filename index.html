@@ -14,6 +14,7 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="media.css" />
+    <script src="media.js" defer></script>
 
 </head>
 
@@ -40,29 +41,28 @@
             
             <div class="recent-search ">
             <h3>Recent Search</h3>
-            <div class="recent-list">
+            <div class="searchlist">
+            
             </div>
 
             </div>
         </div>
         </div>
-
-
-
 
     
     <div class="hidden-converter convertSection">
         <div class="convert  container">
             <button type="button" class="convertButton "><i class=" fa-solid fa-circle-info"></i></button>
         <div class="tempSwitch">
-            <button class="container c"><i class=" fa-solid fa-temperature-low"></i>Celsius</button>
-            <button  class="container f search-button" onclick="onChange()"><i class=" fa-solid fa-temperature-low"></i>Fahrenheit</button>
+            <button class="container c"><i class=" fa-solid fa-temperature-low"></i>C</button>
+            <button  class="container f search-button" onclick="onChange()"><i class=" fa-solid fa-temperature-low"></i>F</button>
     </div>
 </div>
         
         
 <div class="hidden-maincontent overview grid-item">
         <div class=" main" id="today">
+            <div class="today-icon"></div>
                 <div class="content primary" id="todays-results">
                     <p class="date"></p>
                     <p class="located"></p>
@@ -76,7 +76,6 @@
 
                 <div class="content  primary" id="today_message">
                     <p class="todaySummary"></p>
-                    <p class="recall"></p>
                 </div>
         </div>
 
