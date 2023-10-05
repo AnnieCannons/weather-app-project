@@ -1,0 +1,83 @@
+body{
+    background-color: rgb(43, 226, 202);
+    
+
+}
+#enter{
+    border: ridge ;
+    border-color: rgb(131, 69, 136);
+    color: rgb(255, 0, 136);
+    background-color: rgb(219, 178, 220);
+}
+.header-container{
+    display: flex;
+    align-content: center;
+    margin: auto;
+    padding: 3em;
+    border: 4px ridge rgb(255, 0, 136);
+    width:50% ;
+    height:50px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.todaysWeather-container{
+     /* display: flex;  */
+    border: 4px ridge rgb(131, 69, 136);
+    justify-content: center;
+    width: 20%;
+    height: 350px;
+    color: rgb(255, 225, 0);
+    padding: 2em;
+    
+}
+.todaysTemp{
+    border: 6px ridge rgb(131, 69, 136);
+    padding: 3em;
+    height: fit-content;
+}
+
+
+.three-day-container{
+    display: flex;
+    width: 90%;
+    margin:auto;
+    justify-content: space-between;
+
+
+}
+
+.three-day-container div{
+    border: 2px solid ;
+    padding: 2em;
+
+}
+
+.single-day-div{
+    border: 2px ridge rgb(41, 171, 210);
+}
+.parent{
+    border: 10px ridge rgb(255, 0, 136);
+    display: flex;
+    width: 80%;
+    margin:3em auto;
+    justify-content: space-around;
+}
+.todaysWeather-container h1, .todaysWeather-container h3, .todaysWeather-container p{
+    font-weight: bold;
+}
+.hottestDay{
+    border: 4px ridge yellow;
+    font-weight: bolder;
+    font-size: larger;
+    text-align: center;
+    
+    
+    
+}
+.Forecast-1{
+flex-direction: row;
+display: flex ;
+flex-wrap: wrap;
+row-align:center;
+
+}
