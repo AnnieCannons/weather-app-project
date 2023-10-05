@@ -319,3 +319,137 @@ display: block;
 }
 
 
+
+
+
+
+
+
+@media (min-width: 1000px) {
+    .recent-search {
+        right: 8vw;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 100px) {
+    .recent-search {
+        max-width: 800px;
+        width: auto;
+    }
+}
+
+@media (max-width: 650px) {
+    .initial-body {
+        background-image: url("https://i.pinimg.com/736x/4f/3e/d6/4f3ed6ce172f1d4248805e9a25204d62.jpg");
+        background-size: cover;
+        background-repeat: repeat;
+        margin: 0;
+        height: 100vh;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .initial-header {
+        width: vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        height: 50vh;
+        width: 80vw;
+        box-shadow:
+            inset 0 0 0px rgb(0, 0, 0),
+            inset 0 0 20px rgb(255, 255, 255);
+    }
+
+    .header {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        padding: 10px 5px 10px 5px;
+        height: max-content;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #weather-title {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .recent-search {
+        top: 75px;
+        right: 15px;
+    }
+
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .content {
+        height: auto;
+        padding: 10px;
+        width: 70vw;
+        font-size: 16px;
+    }
+
+    .tempSwitch .container {
+        font-size: 18px;
+        padding: 10px 15px 10px 0px;
+    }
+}
+
+@media (max-width: 475px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .initial-header {
+        min-height: 150px;
+    }
+
+    #search-input::placeholder {
+        font-size: 25px;
+    }
+
+    #search-input {
+        font-size: 20px;
+    }
+
+    #weather-title {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .recent-search {
+        top: 98px;
+        right: 15vw;
+        width: 60vw;
+    }
+
+    .content {
+        width: 60vw;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 290px) {
+    .recent-search {
+        top: 130px;
+        right: 9vw;
+        width: 60vw;
+    }
+}
+
+.fa-sun {
+    font-size: 20px;
+}

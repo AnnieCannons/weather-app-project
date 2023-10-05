@@ -7,10 +7,9 @@ let searchHistory = []
 let dayValue = []
 let cityLink;
 let today;
-let future;
+// let future;
 let todayClass;
 let todayValue;
-let futureClass;
 let futureValue;
 let today_message;
 let futureLibrary;
@@ -25,7 +24,7 @@ let future2 = document.getElementById("2");
 let future3 = document.getElementById("3");
 futureResults = [1, 2, 3];
 let celsiusButton = document.querySelector("button.c");
-let searchList = document.querySelector(".history-button")
+let historyList = document.querySelector(".history-button")
 let hiddenConverter = document.querySelector(".hidden-converter");
 let hiddenMaincontent = document.querySelector(".hidden-maincontent");
 let initialHead = document.querySelector(".initial-header");
@@ -36,6 +35,32 @@ let searchlist = document.querySelector('.searchlist');
 
 
 
+todayClass = [
+    'date',
+    'located',
+    'currentTemp',
+    'feelslike',
+    'maxtemp',
+    'mintemp',
+    'chance_of_rain'
+]
+
+
+todaysMessageClass = [
+    'todaySummary',
+]
+
+// for(let i = 0; i<=5; i++) {
+//     futureBox = document.createElement('div');
+//     futureBox.classList.add("content", "secondary", i);
+//     futureBox.setAttribute('id', `day${i}`);
+//      future.appendChild(futureBox);
+//     for (let i = 0; i < futureChildClass.length; i++) {
+//         futureChild = document.createElement('p');
+//         futureChild.setAttribute('id', futureChildClass[i])    
+//         futureBox.appendChild(futureChild);
+//     }
+//     }
 
 
 
@@ -45,55 +70,64 @@ let searchlist = document.querySelector('.searchlist');
 
 
 
-// let futureBox;
-// let futureField;
-// let futureClass;
-// let futureId;
-// let futureChild;
-// let futureChildClass;
-// let childValue = [];
-// let childClass = [];
-
-
-// let futureChildValue = 
-// {
-//     date: `${getDayOfWeek(dayCall[i].date)}`, 
-//     avetemp: `Average  Temp: ${dayCall[i].day.avgtemp_f}°F`, 
-//     maxtemp: `Today's High: ${dayCall[i].day.maxtemp_f}°F`, 
-//     mintemp: `Todays Low: ${dayCall[i].day.mintemp_f}°F`, 
-//     chance_of_rain: `Chance of Rain: ${dayCall[i].day.daily_chance_of_rain}%`
-// }
+let future = document.getElementById('future');
+let futureBox = [];
+let futureField;
+let futureClass;
+let futureId;
+let futureChild = []
+let futureChildClass;
+let futureValues;
 
 
 
+futureChildClass = 
+[
+    'date', 
+    'avetemp', 
+    'maxtemp', 
+    'mintemp', 
+    'chance_of_rain'
+]
 
-// futureBox = [
-//     (futureField = document.createElement('div')),
-//     (futureClass = futureField.classList.add("content, secondary, ")),
-//     (futureId = futureField.setAttribute('id', `${dayValue.length}`)),
-// ]
+
+for(let i = 0; i<=5; i++) {
+futureBox = document.createElement('div');
+futureBox.classList.add("content", "secondary", i);
+futureBox.setAttribute('id', `day${i}`);
+ future.appendChild(futureBox);
+for (let i = 0; i < futureChildClass.length; i++) {
+    futureChild = document.createElement('p');
+    futureChild.setAttribute('id', futureChildClass[i])    
+    futureBox.appendChild(futureChild);
+}
+}
 
 
 
-// futureBox = {
 
-//     futureField: document.createElement('div'),
+// futureValues = {
+//     date: (document.querySelector(`#day${[i]} .date`).textContent =
+//     getDayOfWeek(dayCall[i].date)),
 
-//     futureClass: futureField.classList.add("content, secondary, "),
+//     avgtemp: (document.querySelector(
+//             `#day${[i]} .avetemp`
+//     ).textContent = `Average  Temp: ${dayCall[i].day.avgtemp_f}°F`),
 
-//     futureId: futureField.setAttribute('id', `future-value`),
+//     maxtemp: (document.querySelector(
+//             `#day${[i]} .maxtemp`
+//     ).textContent = `Today's High: ${dayCall[i].day.maxtemp_f}°F`),
 
-//     futureChild: document.createElement('p'),
+//     mintemp:  (document.querySelector(
+//             `#day${[i]} .mintemp`
+//     ).textContent = `Todays Low: ${dayCall[i].day.mintemp_f}°F`),
 
-//     childClass: Object.keys(futureChildValue),
+//     chance_of_rain: (document.querySelector(
+//             `#day${[i]} .chance_of_rain`
+//     ).textContent = `Chance of Rain: ${dayCall[i].day.daily_chance_of_rain}%`)
+// };
 
-//     childValue: Object.values(futureChildValue),
 
-    
-// }
+console.log(future)
 
-// for(let i = 0; i<5; i++) {
-//     futureBox.futureChild
-//     futureChild[i].setAttribute(childClass[i]);
-//     futureChild[i].innerHTML = childValue[i];
-// }
+
