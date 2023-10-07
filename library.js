@@ -23,18 +23,31 @@ if (cityFromUser.includes(" ")) {
 }
 
 function onChange() {
+  cityFromUser = document.getElementById("search-input").value;
+  dayCount = document.getElementById("dayCount").value
   searched.unshift(cityFromUser);
+  searchLink.unshift(cityLink);
 
+
+  cityLink = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityFromUser}&days=${dayCount}&aqi=no&alerts=no`;
+  
+console.log(searchLink, cityFromUser, dayCount)
   for (let i = 0; i < searched.length; i++) {
-
+    cityFromUser = document.getElementById("search-input").value;
+    dayCount = document.getElementById("dayCount").value
+    searched.unshift(cityFromUser);
+    searchLink.unshift(cityLink);
       let link = document.createElement('a');
       let txt = document.createTextNode(` ${document.getElementById("search-input").value}`)
       link.appendChild(txt);
       link.title = document.getElementById("search-input").value;
-      link.href = testLink;
+      link.href = searchLink;
       link.setAttribute('class', 'fa-solid fa-clock-rotate-left')
       searchList.append(link)
+    
   }
+  console.log(searchLink, cityFromUser, dayCount, searched)
+  cityLink = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityFromUser}&days=${dayCount}&aqi=no&alerts=no`;
 
 fetch(testLink)
 .then((response) => response.json())

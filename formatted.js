@@ -59,47 +59,35 @@ fetch(testLink)
             future.setAttribute('id', 'future');
             mainContent.appendChild(future);
 
-            for (let i = 1, b = 0; i < 5, b < key.futureContent.length; i++, b++) {
+            for (let i = 1; i < 5; i++) {
                 futureBox = document.createElement('div');
                 futureBox.classList.add("content", "secondary", i);
                 futureBox.setAttribute('id', `day${i}`);
                 future.appendChild(futureBox);
 
-                keys =
-                date = `${getDayOfWeek(dayCall[i].date)}`,
-                avg = `Average Temp: ${dayCall[i].day.avgtemp_f}°F`,
-                max = `Today's High: ${dayCall[i].day.maxtemp_f}°F`,
-                min = `Todays Low: ${dayCall[i].day.mintemp_f}°F`,
-                rain = `Chance of Rain: ${dayCall[i].day.daily_chance_of_rain}%`
-
-
-                key.futureContent[i] = document.createElement('p')
-                key.futureContent[i].setAttribute('id', key.futureContent[b])
-                key.futureContent[i].innerHTML = 
-
-                // futuredate = document.createElement('p')
-                // futureavg = document.createElement('p')
-                // futuremax = document.createElement('p')
-                // futuremin = document.createElement('p')
-                // futurerain = document.createElement('p')
+                futuredate = document.createElement('p')
+                futureavg = document.createElement('p')
+                futuremax = document.createElement('p')
+                futuremin = document.createElement('p')
+                futurerain = document.createElement('p')
              
-                // futuredate.setAttribute('id', 'date')
-                // futureavg.setAttribute('id', 'avg')
-                // futuremax.setAttribute('id', 'max')
-                // futuremin.setAttribute('id', 'min')
-                // futurerain.setAttribute('id', 'rain')
+                futuredate.setAttribute('id', 'date')
+                futureavg.setAttribute('id', 'avg')
+                futuremax.setAttribute('id', 'max')
+                futuremin.setAttribute('id', 'min')
+                futurerain.setAttribute('id', 'rain')
               
-                // futuredate.innerHTML = `${getDayOfWeek(dayCall[i].date)}`
-                // futureavg.innerHTML =  `Average Temp: ${dayCall[i].day.avgtemp_f}°F`
-                // futuremax.innerHTML =  `Today's High: ${dayCall[i].day.maxtemp_f}°F`
-                // futuremin.innerHTML =  `Todays Low: ${dayCall[i].day.mintemp_f}°F`
-                // futurerain.innerHTML = `Chance of Rain: ${dayCall[i].day.daily_chance_of_rain}%`
+                futuredate.innerHTML = `${getDayOfWeek(dayCall[i].date)}`
+                futureavg.innerHTML =  `Average Temp: ${dayCall[i].day.avgtemp_f}°F`
+                futuremax.innerHTML =  `Today's High: ${dayCall[i].day.maxtemp_f}°F`
+                futuremin.innerHTML =  `Todays Low: ${dayCall[i].day.mintemp_f}°F`
+                futurerain.innerHTML = `Chance of Rain: ${dayCall[i].day.daily_chance_of_rain}%`
 
-                // futureBox.appendChild(futuredate)
-                // futureBox.appendChild(futureavg)
-                // futureBox.appendChild(futuremax)
-                // futureBox.appendChild(futuremin)
-                // futureBox.appendChild(futurerain)
+                futureBox.appendChild(futuredate)
+                futureBox.appendChild(futureavg)
+                futureBox.appendChild(futuremax)
+                futureBox.appendChild(futuremin)
+                futureBox.appendChild(futurerain)
             }
 
 
@@ -183,21 +171,9 @@ fetch(testLink)
                     'message',
                 ],
 
-            futureContent:
-                [
-                    'futuredate',
-                    'futureavg',
-                    'futuremax',
-                    'futuremin',
-                    'futurerain',
-                ],
-
-        
+    
             overViewContent:
                 ["highestTemp"],
-
-
-
 
         };
 
@@ -215,5 +191,3 @@ fetch(testLink)
 
 let mainContent = document.querySelector(".main-content");
 let footer = document.querySelector('.footer')
-console.log(mainContent)
-console.log(footer)
