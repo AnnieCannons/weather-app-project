@@ -3,6 +3,7 @@
 box-sizing: border-box;
 font-style: none;
 list-style: none;
+text-decoration: none;
 }
 
 html 
@@ -19,24 +20,36 @@ height: 100vh;
 overflow-x: hidden;
 }
 
+.main {
+    display: grid;
+    gap: 20px;
+}
 
+.main > div p {
+    text-align: center;
+}
 
 .content {
 background-color: black;
 color: rgb(255, 255, 255);
 border: 2px black;
-margin: 20px 0px;
+margin: 10px 0px;
+}
+
+#today {
+    width: 90vw;
 }
 
 #future {
-background-color: blue;
+grid-template-columns: auto auto auto;
 }
 
 
 
 
-#today 
+
+#date 
 {
-
+color: red;
+font-size: 25px;
 }
-

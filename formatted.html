@@ -15,39 +15,32 @@
     <link rel="stylesheet" href="formatted.css" />
     <script src="library.js" defer></script>
     <script src="formatted.js" defer></script>
-   
-    </head>
 
-    <body>
+</head>
 
-        <div class="initial-header grid-item">
-            <div>
-                <h1 class="title" id="weather-title">Local Weather Report</h1>
-            </div>
-            <div class="search">
-                <div>
-                    <button type="button" class="submit" id="search-button">
-                        <i class="fa-solid fa-magnifying-glass icon" onclick="onChange()">
-                        </i>
-                    </button>
-                </div>
-                <input type=text id="search-input" placeholder="Enter City">
-                <button class="history-button ">
-                    <i class="fa-solid fa-clock-rotate-left"></i>
+<body>
 
-                    <div class="recent-search ">
-                        <h3>Recent Search</h3>
-                        <div class="searchlist">
+    <div class="header">
+        <h1 class="title" id="weather-title">Local Weather Report</h1>
 
-                        </div>
 
-                    </div>
-            </div>
-        </div>
-        
-        <div class="header"></div>
-        <div class="main-content"></div>
-        <div class="footer"></div>
+        <button class="history-button ">
+            <i class="fa-solid fa-clock-rotate-left"></i></button>
+        <input type=text id="search-input" placeholder="Enter City">
+        <input type=text id="dayCount" placeholder="Number of Days">
+        <button type="button" class="submit" id="search-button">
+            <i class="fa-solid fa-magnifying-glass icon" onclick="onChange()">
+            </i>
+        </button>
 
-    </body>
-    </html>
+        <div class="recent-search ">
+            <h3>Recent Search</h3>
+            <div class="searchlist">
+    </div>
+    
+    <div class="main-content"></div>
+    <div class="footer"></div>
+
+</body>
+
+</html>

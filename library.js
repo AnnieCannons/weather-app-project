@@ -1,193 +1,89 @@
-let mainContent = document.querySelector(".main-content");
-let key;
+
+let apiKey = "8b78ddff94f24e8087b182603232609";
+let searched = [];
+let searchHistory = [];
+let searchButton = document.querySelector(".history-button");
+let searchLink = [];
+let searchList = document.querySelector('.searchlist');
+let dayCount = document.getElementById("dayCount").value
+let results;
+let dayCall;
+let cityFromUser = document.getElementById("search-input").value;
+let testLink;
+let icon;
 
 
-todayKey = {
+// Search History Recall with Link
 
-  todayTitle: 
-  ["today", 
-  "summary"],
-
-  containers: 
-  ["todaysBox", 
-  "summaryBox"],
-
-  elements: 
-  ["todaysContent", 
-  "summaryContent"],
-
-  todayLists: 
-  [
-    "date",
-    "located",
-    "currentTemp",
-    "feelslike",
-    "maxtemp",
-    "mintemp",
-    "chance_of_rain",
-  ],
-
-  summaryClass: 
-  ["todaySummary", 
-  "todaysIcon", 
-  "currentTime"],
-};
+testLink = 'http://api.weatherapi.com/v1/forecast.json?key=8b78ddff94f24e8087b182603232609&q=manchester&days=5&aqi=no&alerts=no'
 
 
+if (cityFromUser.includes(" ")) {
+  cityFromUser = cityFromUser.replace(/ /g, "-");
+}
 
+function onChange() {
+  searched.unshift(cityFromUser);
 
+  for (let i = 0; i < searched.length; i++) {
 
+      let link = document.createElement('a');
+      let txt = document.createTextNode(` ${document.getElementById("search-input").value}`)
+      link.appendChild(txt);
+      link.title = document.getElementById("search-input").value;
+      link.href = testLink;
+      link.setAttribute('class', 'fa-solid fa-clock-rotate-left')
+      searchList.append(link)
+  }
 
-
-
-futureKey = {
-  
-  futureTitle: 
-  ["future", 
-  "overview"],
-
-  containers: 
-  ["futureBox", 
-  "overviewBox"],
-
-  elements: 
-  ["futureContent", 
-  "overviewContent"],
-
-  futureContentClass: [
-    "date",
-    "avgtemp",
-    "maxtemp",
-    "mintemp",
-    "chance_of_rain",
-  ],
-
-  overViewClass: 
-  [
-    "highestTemp"
-  ],
-
-  futureContentClassF: 
-  [
-    "date",
-    "avgtemp",
-    "maxtemp",
-    "mintemp",
-    "chance_of_rain",
-  ],
-
-  futureContentClassC: 
-  [
-    "date",
-    "avgtemp",
-    "maxtemp",
-    "mintemp",
-    "chance_of_rain",
-  ],
-
-  futurevalue: 
-  [
-'getDayOfWeek(dayCall[i].date))',
-
-  ]
-
-};
+fetch(testLink)
+.then((response) => response.json())
+.then((data) => {
+dayCall = data.forecast.forecastday
 
 
 
+//Todays Summary results 
+if (data.current.temp_f > 75) {
+  let message = `Its Hot Today!`;
+} else if (data.current.temp_f > 45 || data.current.temp_f < 75) {
+ message =  `Its Moderate Today!`;
+} else if (data.current.temp_f < 45) {
+  message = `Its Cold Today!`;
+}
 
-
-key = {
-
-
-  newElements: 
-  [
-  'today',
-  'todaysBox', 
-  'summary',
-  'summaryBox', 
-  'future',
-  'futureBox', 
-  'overview',
-  'overviewBox',
-],
-
-gridItems: 
-[
-  'today',
-  'summary',
-  'future',
-  'overview',
- 
-],
-
-
-boxes: 
-[
-  'todayBox',
-  'summaryBox',
-  'futureBox',
-  'overviewBox'
-],
-
-
-  content: 
-  [
-    "todaysContent",
-    "summaryContent",
-    "futureContent",
-    "overviewContent",
-  ],
-
-  todayAttributes: 
-  [
-  ],
-
-  todaysContentClass: 
-  [
-    "date",
-    "located",
-    "currentTemp",
-    "feelslike",
-    "maxtemp",
-    "mintemp",
-    "chance_of_rain",
-  ],
-
-  todaysSummaryClass: 
-  ["todaySummary", 
-  "todaysIcon", 
-  "currentTime"],
-
-
-  futureContentClass: 
-  [
-    "date",
-    "avgtemp",
-    "maxtemp",
-    "mintemp",
-    "chance_of_rain",
-  ],
-
-  overViewClass: 
-  ["highestTemp"],
-};
+})
 
 
 
+}
 
+cityLink = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityFromUser}&days=${dayCount}&aqi=no&alerts=no`;
 
+testLink = 'http://api.weatherapi.com/v1/forecast.json?key=8b78ddff94f24e8087b182603232609&q=manchester&days=5&aqi=no&alerts=no'
 
+      // Return day of the week
+      function getDayOfWeek(date) {
+        let daysOfWeek = [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+        ];
+        let dayOfWeek = new Date(date).getDay();
 
+        if (
+            isNaN(dayOfWeek) ||
+            dayOfWeek < 0 ||
+            dayOfWeek >= daysOfWeek.length
+        ) {
+            return null;
+        }
 
-// elements();
-console.log(mainContent);
-let today  = key.newElements[0];
-let message  = key.newElements[2];
-let future  = key.newElements[4];
-let overView  = key.newElements[6];
-let todayContainer = key.newElements[1];
-let messageContainer = key.newElements[3];
-let futureContainer = key.newElements[5];
-let overViewContainer = key.newElements[8];
+        return daysOfWeek[dayOfWeek];
+    }
 
+    getDayOfWeek();
