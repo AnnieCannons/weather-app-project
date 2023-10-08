@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +16,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formatted</title>
     <link rel="stylesheet" href="formatted.css" />
-    <script src="library.js" defer></script>
-    <script src="formatted.js" defer></script>
 
 </head>
 
@@ -23,24 +24,82 @@
     <div class="header">
         <h1 class="title" id="weather-title">Local Weather Report</h1>
 
-
+        <div class="serach-controls">
         <button class="history-button ">
             <i class="fa-solid fa-clock-rotate-left"></i></button>
         <input type=text id="search-input" placeholder="Enter City">
-        <input type=text id="dayCount" placeholder="Number of Days">
+    
         <button type="button" class="submit" id="search-button">
             <i class="fa-solid fa-magnifying-glass icon" onclick="onChange()">
             </i>
         </button>
-
+       
+        
         <div class="recent-search ">
+            <button  class="c"><i class="c fa-solid fa-temperature-low"></i>C</button>
+            <button class="f search-button" onclick="onChange()"><i
+                    class="fa-solid fa-temperature-low"></i>F</button>
+            </div>
             <h3>Recent Search</h3>
             <div class="searchlist">
     </div>
-    
-    <div class="main-content"></div>
-    <div class="footer"></div>
+ 
+    <div class="main" id="today">
 
+        <div class="content primary" id="todays-results">
+            <p class="date"></p>
+            <p class="located"></p>
+            <p class="currentTemp"></p>
+            <p class="feelslike"></p>
+            <p class="maxtemp"></p>
+            <p class="mintemp"></p>
+            <p class="chance-of-rain"></p>
+
+        </div>
+
+        <div class="content main primary" id="today_message">
+            <p class="todaySummary"></p>
+        </div>
+    </div>
+
+
+    <div class="main" id="future">
+
+        <div class="content  secondary 1" id="one">
+            <p class="date"></p>
+            <p class="avetemp"></p>
+            <p class="maxtemp"></p>
+            <p class="mintemp"></p>
+            <p class="chance_of_rain"></p>
+        </div>
+
+        <div class="content  secondary 2" id="two">
+            <p class="date"></p>
+            <p class="avetemp"></p>
+            <p class="maxtemp"></p>
+            <p class="mintemp"></p>
+            <p class="chance_of_rain"></p>
+        </div>
+
+        <div class="content  secondary 3" id="three">
+            <p class="date"></p>
+            <p class="avetemp"></p>
+            <p class="maxtemp"></p>
+            <p class="mintemp"></p>
+            <p class="chance_of_rain"></p>
+        </div>
+
+    </div>
+
+    <div class="main" id="footer">
+
+        <div class="content  footer" id="highestTemp">
+            <p class="highestTemp"></p>
+        </div>
+
+    </div>
+
+    <script src="library.js" defer></script>
 </body>
 
 </html>

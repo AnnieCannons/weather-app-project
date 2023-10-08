@@ -156,9 +156,9 @@ border-radius: 25px;
     border-radius: 25px;
     top: 60px;
     right: 5vw;
-    padding: 8px 30px 8px 30px;
+    padding: 8px 30px 20px 30px;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.809);
+    background-color: rgba(0, 0, 0, 0.887);
     box-shadow:  0 0 50px white;
     color: white;
     max-height: 210px;
@@ -169,6 +169,11 @@ border-radius: 25px;
 
 .recent-search h3 {
     color: white;
+}
+
+.recent-search a {
+    text-decoration: none;
+    color: greenyellow
 }
 
 .searchlist {
@@ -215,6 +220,11 @@ border-radius: 25px;
 display: block;
 }
 
+.searchlist {
+    color: white;
+    text-decoration: none;
+    font-size: small;
+}
 
 .convert {
     margin-top: 10px;
@@ -437,7 +447,7 @@ display: block;
     }
 
     .content {
-        width: 60vw;
+        width: 70vw;
         font-size: 20px;
     }
 }

@@ -4,6 +4,7 @@ box-sizing: border-box;
 font-style: none;
 list-style: none;
 text-decoration: none;
+font-family: 'Montserrat', sans-serif;
 }
 
 html 
@@ -14,42 +15,96 @@ padding: 0;
 
 body
 {
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/123/290/342/waves-water-sea-nature-wallpaper-preview.jpg");
 margin: 0;
 padding: 0;
-height: 100vh;
+height: 100%;
 overflow-x: hidden;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .main {
-    display: grid;
-    gap: 20px;
+display: grid;
+gap: 20px;
+margin: 10px 20px;
 }
 
-.main > div p {
-    text-align: center;
+
+.header {
+display: flex;
+flex-direction: column;
+width: 100vw;
+height: 200px;
+text-align: center;
+background-image: url("https://i.pinimg.com/736x/4f/3e/d6/4f3ed6ce172f1d4248805e9a25204d62.jpg");
+
 }
 
-.content {
-background-color: black;
-color: rgb(255, 255, 255);
-border: 2px black;
-margin: 10px 0px;
+.search-controls {
+
+}
+
+.title {
+ 
+}
+
+button {
 }
 
 #today {
-    width: 90vw;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
 #future {
 grid-template-columns: auto auto auto;
+
 }
 
+#footer {
+background-color: rgba(245, 245, 245, 0.668);
+color: rgba(0, 0, 0, 0.661);
+}
 
+#todays-results {
 
+justify-content: center;
+align-items: center;
 
+}
+
+.primary {
+    background-color: rgba(0, 0, 0, 0.505);
+    color: whitesmoke
+}
+
+#todays-results p {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#today_message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #date 
 {
 color: red;
 font-size: 25px;
+}
+
+.secondary {
+    background-color: rgba(0, 0, 0, 0.505);
+    color: whitesmoke
+}
+
+.hidden {
+    display: none;
 }

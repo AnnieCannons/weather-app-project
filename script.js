@@ -13,16 +13,9 @@ let todayValue;
 let futureClass;
 let futureValue;
 let today_message;
-let futureLibrary;
 let todaySummary;
-let max;
 let searchInput;
-let dates;
 let dayCall;
-let highestTemp;
-let future1 = document.getElementById("1");
-let future2 = document.getElementById("2");
-let future3 = document.getElementById("3");
 futureResults = [1, 2, 3];
 let celsiusButton = document.querySelector("button.c");
 let searchList = document.querySelector(".history-button")
@@ -47,23 +40,32 @@ function onChange() {
         if (cityFromUser.includes(" ")) {
                 cityFromUser = cityFromUser.replace(/ /g, "-");
         }
-
+        cityLink = `http://api.weatherapi.com/v1/forecast.json?key=8b78ddff94f24e8087b182603232609&q=${cityFromUser}&days=${4}&aqi=no&alerts=no`;
         // push new searches to the front of the searched array 
 
         searched.unshift(cityFromUser);
-
-
+        let link = document.createElement("a");
+        let txt = document.createTextNode(
+        ` ${document.getElementById("search-input").value}`
+        );
+        link.appendChild(txt);
+        link.title = document.getElementById("search-input").value;
+        link.href = cityLink;
+        link.setAttribute("class", "fa-solid fa-clock-rotate-left");
+      
+        
+        
+        
+console.log(link, cityFromUser, cityLink)
         // every time an input is submitted, create a new variable and store it in the searchHistory array 
 
-        for (let i = 0; i < searched.length; i++) {
-                searchHistory[i] =
-                        `<div class="searchlist"><i class="fa-solid fa-clock-rotate-left"></i>${searched[i]}</div>`
-        }
+       
 
         // have the string join the values with a space instead of a comma
 
-        searchlist.innerHTML = searchHistory.join('');
+        searchlist.append(link);
 
+        cityLink = `http://api.weatherapi.com/v1/forecast.json?key=8b78ddff94f24e8087b182603232609&q=${cityFromUser}&days=${4}&aqi=no&alerts=no`;
 
 
         // remove and add the desired class/id's to specific html properties for smooth css editing 
@@ -138,54 +140,55 @@ function onChange() {
 
                         today = {
                                 date: (document.querySelector(
-                                        `#todays-results .date`
-                                ).textContent = `Today`),
-
+                                    `#todays-results .date`
+                                ).innerHTML = `<i class="fa-solid fa-calendar-day"></i> Today`),
+                
                                 located: (document.querySelector(
-                                        `#todays-results .located`
-                                ).textContent = `${data.location.name}, ${data.location.region}`),
-
+                                    `#todays-results .located`
+                                ).innerHTML = `<i class="fa-solid fa-location-dot"></i> ${data.location.name}, ${data.location.region}`),
+                
                                 currentTemp: (document.querySelector(
-                                        `#todays-results .currentTemp`
-                                ).textContent = `Currently: ${data.current.temp_f}°F`),
-
-                                feelslike: (document.querySelector(
-                                        `#todays-results .maxtemp`
-                                ).textContent = `Today's High: ${dayCall[0].day.maxtemp_f}°F`),
-
+                                    `#todays-results .currentTemp`
+                                ).innerHTML = `<i class="fa-regular fa-clock"></i> Currently: ${data.current.temp_f}°F`),
+                
                                 maxtemp: (document.querySelector(
-                                        `#todays-results .mintemp`
-                                ).innerHTML = `<i class="fa-regular fa-sun"></i> Todays Low: ${dayCall[0].day.mintemp_f}°F`),
-
+                                    `#todays-results .maxtemp`
+                                ).innerHTML = `<i class="fa-solid fa-sun"></i>  Today's High: ${dayCall[0].day.maxtemp_f}°F`),
+                
                                 mintemp: (document.querySelector(
-                                        `#todays-results .feelslike`
-                                ).textContent = `Feels Like: ${data.current.feelslike_f}°F`),
-
+                                    `#todays-results .mintemp`
+                                ).innerHTML = `<i class="fa-regular fa-sun"></i> Todays Low: ${dayCall[0].day.mintemp_f}°F`),
+                
+                                feelslike: (document.querySelector(
+                                    `#todays-results .feelslike`
+                                ).innerHTML = `<i class="fa-solid fa-temperature-half"></i>  Feels Like: ${data.current.feelslike_f}°F`),
+                
                                 chanceOfRain: (document.querySelector(
-                                        `#todays-results .chance-of-rain`
-                                ).textContent = `Chance of Rain: ${dayCall[0].day.daily_chance_of_rain}%`),
-                        };
+                                    `#todays-results .chance-of-rain`
+                                ).innerHTML = `<i class="fa-solid fa-umbrella"></i> Chance of Rain: ${dayCall[0].day.daily_chance_of_rain}%`),
+                            };
 
 
                         //future weather results storied in an array that is looped through matching the html property based on its id and returning the requested information for the next three days
 
                         for (let i = 1; i < 4; i++) {
                                 dates = ["zero", "one", "two", "three"];
-                                (document.querySelector(`#${dates[i]} .date`).textContent =
-                                        getDayOfWeek(dayCall[i].date)),
-                                        (document.querySelector(
-                                                `#${dates[i]} .avetemp`
-                                        ).textContent = `Average  Temp: ${dayCall[i].day.avgtemp_f}°F`),
-                                        (document.querySelector(
-                                                `#${dates[i]} .maxtemp`
-                                        ).textContent = `Today's High: ${dayCall[i].day.maxtemp_f}°F`),
-                                        (document.querySelector(
-                                                `#${dates[i]} .mintemp`
-                                        ).textContent = `Todays Low: ${dayCall[i].day.mintemp_f}°F`),
-                                        (document.querySelector(
-                                                `#${dates[i]} .chance_of_rain`
-                                        ).textContent = `Chance of Rain: ${dayCall[i].day.daily_chance_of_rain}%`);
-                        }
+                                (document.querySelector(`#${dates[i]} .date`).innerHTML =
+                                    `<i class="fa-solid fa-calendar-day"></i> ${getDayOfWeek(dayCall[i].date)}`),
+                                    (document.querySelector(
+                                        `#${dates[i]} .avetemp`
+                                    ).innerHTML = `<i class="fa-solid fa-gauge"></i> Average  Temp: ${dayCall[i].day.avgtemp_f}°F`),
+                                    (document.querySelector(
+                                        `#${dates[i]} .maxtemp`
+                                    ).innerHTML = `<i class="fa-solid fa-sun"></i>  Today's High: ${dayCall[i].day.maxtemp_f}°F`),
+                                    (document.querySelector(
+                                        `#${dates[i]} .mintemp`
+                                    ).innerHTML = `<i class="fa-regular fa-sun"></i> Todays Low: ${dayCall[i].day.mintemp_f}°F`),
+                                    (document.querySelector(
+                                        `#${dates[i]} .chance_of_rain`
+                                    ).innerHTML = `<i class="fa-solid fa-umbrella"></i> Chance of Rain: ${dayCall[i].day.daily_chance_of_rain}%`);
+                            }
+                
 
 
                         //storing the highest temp of each day into an array and the corresponding date into another array
@@ -209,34 +212,34 @@ function onChange() {
                                 //if the highest temp falls on the same day, return this message otherwise return future notice message
 
                                 if (maxlist[i] === dayCall[0].day.maxtemp_f) {
-                                        highestTemp = `Today is  the hottest day of the week with a high of ${maxlist[i]}°F!`;
-                                        document.querySelector(`#highestTemp .highestTemp`).textContent =
-                                                highestTemp;
+                                        highestTemp = `<i class="fa-solid fa-temperature-high"></i> Today is  the hottest day of the week with a high of ${maxlist[i]}°F!`;
+                                        document.querySelector(`#highestTemp .highestTemp`).innerHTML =
+                                            highestTemp;
+                                    }
+                    
+                                    else if (maxlist[i] === max) {
+                                        highestTemp = `<i class="fa-solid fa-temperature-high"></i> The highest temperature this week is ${maxlist[i]}°F on ${maxDate[i]}!`;
+                                        document.querySelector(`#highestTemp .highestTemp`).innerHTML =
+                                            highestTemp;
+                                    }
                                 }
-
-                                else if (maxlist[i] === max) {
-                                        highestTemp = `The highest temperature this week is ${maxlist[i]}°F on ${maxDate[i]}!`;
-                                        document.querySelector(`#highestTemp .highestTemp`).textContent =
-                                                highestTemp;
-                                }
-                        }
 
 
                         // a set of if statements to determine the daily temp summary message by comparing the temperature value of each day
 
                         if (data.current.temp_f > 75) {
                                 todaySummary = document.querySelector(
-                                        `#today_message .todaySummary`
-                                ).textContent = `Its Hot Today!`;
-                        } else if (data.current.temp_f > 45 || data.current.temp_f < 75) {
+                                    `#today_message .todaySummary`
+                                ).innerHTML = `<i class="fa-solid fa-umbrella-beach"></i> Its Hot Today!`;
+                            } else if (data.current.temp_f > 45 || data.current.temp_f < 75) {
                                 todaySummary = document.querySelector(
-                                        `#today_message .todaySummary`
-                                ).textContent = `Its Moderate Today!`;
-                        } else if (data.current.temp_f < 45) {
+                                    `#today_message .todaySummary`
+                                ).innerHTML = ` <i class="fa-solid fa-wind"></i>  Its Moderate Today!`;
+                            } else if (data.current.temp_f < 45) {
                                 todaySummary = document.querySelector(
-                                        `#today_message .todaySummary`
-                                ).textContent = `Its Cold Today!`;
-                        }
+                                    `#today_message .todaySummary`
+                                ).innerHTML = `<i class="fa-regular fa-snowflake"></i> Its Cold Today!`;
+                            }
 
 
                         // additional weather details that can be used for extra interaction / details
@@ -284,76 +287,76 @@ celsiusButton.addEventListener("click", function celsius() {
                         today = {
 
                                 currentTemp: (document.querySelector(
-                                        `#todays-results .currentTemp`
-                                ).textContent = `Currently: ${data.current.temp_c}°C`),
-
+                                    `#todays-results .currentTemp`
+                                ).innerHTML = `<i class="fa-solid fa-location-dot"></i>  Currently: ${data.current.temp_c}°C`),
+                
                                 feelslike: (document.querySelector(
-                                        `#todays-results .maxtemp`
-                                ).textContent = `Today's High: ${dayCall[0].day.maxtemp_c}°C`),
-
+                                    `#todays-results .maxtemp`
+                                ).innerHTML = `<i class="fa-solid fa-temperature-half"></i>  Today's High: ${dayCall[0].day.maxtemp_c}°C`),
+                
                                 maxtemp: (document.querySelector(
-                                        `#todays-results .mintemp`
-                                ).textContent = `Todays Low: ${dayCall[0].day.mintemp_c}°C`),
-
+                                    `#todays-results .mintemp`
+                                ).innerHTML = `<i class="fa-regular fa-sun"></i> Todays Low: ${dayCall[0].day.mintemp_c}°C`),
+                
                                 mintemp: (document.querySelector(
-                                        `#todays-results .feelslike`
-                                ).textContent = `Feels Like: ${data.current.feelslike_c}°C`),
+                                    `#todays-results .feelslike`
+                                ).innerHTML = `<i class="fa-solid fa-sun"></i>  Feels Like: ${data.current.feelslike_c}°C`),
+                
+                
+                            };
 
-
-                        };
-
-                        for (let i = 1; i < 4; i++) {
+                            for (let i = 1; i < 4; i++) {
                                 (document.querySelector(
-                                        `#${dates[i]} .avetemp`
-                                ).textContent = `Average  Temp: ${dayCall[i].day.avgtemp_c}°C`),
-                                        (document.querySelector(
-                                                `#${dates[i]} .maxtemp`
-                                        ).textContent = `Today's High: ${dayCall[i].day.maxtemp_c}°C`),
-                                        (document.querySelector(
-                                                `#${dates[i]} .mintemp`
-                                        ).textContent = `Todays Low: ${dayCall[i].day.mintemp_c}°C`)
+                                    `#${dates[i]} .avetemp`
+                                ).innerHTML = `<i class="fa-solid fa-gauge"></i> Average  Temp: ${dayCall[i].day.avgtemp_c}°C`),
+                                    (document.querySelector(
+                                        `#${dates[i]} .maxtemp`
+                                    ).innerHTML = `<i class="fa-solid fa-sun"></i> Today's High: ${dayCall[i].day.maxtemp_c}°C`),
+                                    (document.querySelector(
+                                        `#${dates[i]} .mintemp`
+                                    ).innerHTML = `<i class="fa-regular fa-sun"></i> Todays Low: ${dayCall[i].day.mintemp_c}°C`)
+                
+                            }
 
-                        }
-
-                        for (let i = 0; i < 4; i++) {
+                            for (let i = 0; i < 4; i++) {
                                 maxlist[i] = dayCall[i].day.maxtemp_c;
-
-                        }
-
-                        max = maxlist.reduce((a, b) => Math.max(a, b), -Infinity);
-
-                        for (let i = 0; i < maxlist.length; i++) {
+                
+                            }
+                
+                            max = maxlist.reduce((a, b) => Math.max(a, b), -Infinity);
+                
+                            for (let i = 0; i < maxlist.length; i++) {
                                 if (maxlist[i] === dayCall[0].day.maxtemp_c) {
-                                        highestTemp = `Today is  the hottest day of the week with a high of ${maxlist[i]}°C!`;
-                                        document.querySelector(`#highestTemp .highestTemp`).textContent =
-                                                highestTemp;
+                                    highestTemp = `<i class="fa-solid fa-temperature-high"></i> Today is  the hottest day of the week with a high of ${maxlist[i]}°C!`;
+                                    document.querySelector(`#highestTemp .highestTemp`).innerHTML =
+                                        highestTemp;
                                 }
-
+                
                                 else if (maxlist[i] === max) {
-                                        highestTemp = `The highest temperature this week is ${maxlist[i]}°C on ${maxDate[i]}!`;
-                                        document.querySelector(`#highestTemp .highestTemp`).textContent =
-                                                highestTemp;
+                                    highestTemp = `<i class="fa-solid fa-temperature-high"></i> The highest temperature this week is ${maxlist[i]}°C on ${maxDate[i]}!`;
+                                    document.querySelector(`#highestTemp .highestTemp`).innerHTML =
+                                        highestTemp;
                                 }
-                        }
+                            }
 
 
 
 
-                        if (data.current.temp_c > 23) {
+                            if (data.current.temp_c > 23) {
                                 todaySummary = document.querySelector(
-                                        `#today_message .todaySummary`
-                                ).textContent = `Its Hot Today!`;
-                        } else if (data.current.temp_c > 8 || data.current.temp_c < 23) {
+                                    `#today_message .todaySummary`
+                                ).innerHTML = `<i class="fa-solid fa-umbrella-beach"></i>  Its Hot Today!`;
+                            } else if (data.current.temp_c > 8 || data.current.temp_c < 23) {
                                 todaySummary = document.querySelector(
-                                        `#today_message .todaySummary`
-                                ).textContent = `Its Moderate Today!`;
-                        } else if (data.current.temp_c < 7) {
+                                    `#today_message .todaySummary`
+                                ).innerHTML = `<i class="fa-solid fa-wind"></i>  Its Moderate Today!`;
+                            } else if (data.current.temp_c < 7) {
                                 todaySummary = document.querySelector(
-                                        `#today_message .todaySummary`
-                                ).textContent = `Its Cold Today!`;
-                        }
+                                    `#today_message .todaySummary`
+                                ).innerHTML = `<i class="fa-regular fa-snowflake"></i>  Its Cold Today!`;
+                            }
+                        })
                 })
-})
 
 console.log(searched);
 
