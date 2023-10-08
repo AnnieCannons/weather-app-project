@@ -220,19 +220,6 @@ border-radius: 25px;
 display: block;
 }
 
-.fa-regular {
-    color: rgb(102, 255, 250)
-}
-
-.fa-solid {
-    color: rgb(93, 255, 177)
-}
-
-.searchlist {
-    color: white;
-    text-decoration: none;
-    font-size: small;
-}
 
 .convert {
     margin-top: 10px;
