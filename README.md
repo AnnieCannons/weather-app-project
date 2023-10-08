@@ -1,6 +1,6 @@
 # Weathery - An AnnieCannons Project
 
-Weathery is a project for students at AnnieCannons.. The finished app allows users to search for locations and get the matching weather forecasts.
+Weathery is a project for students at AnnieCannons.. The finished app allows users to search for locations and get the matching weather forecasts."
 
 This project brings together all the skills needed for the Advanced Modules, so that staff and student alike can know the student is ready to proceed with confidence, or know with confidence what skills gaps need addressing.
 
