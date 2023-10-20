@@ -35,7 +35,8 @@ let forecast =[]
 let arrayOfThree = [];
 
 enter.addEventListener('click', function(){
-    
+    document.querySelector(".three-day-container").innerHTML=""
+    arrayOfThree = []
     let cityFromUser = userInput.value
     console.log(cityFromUser)
     // api call 
@@ -43,7 +44,7 @@ enter.addEventListener('click', function(){
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        arrayOfThree = []
+        
         //creating current object
     currentObj.currentTemp = data.current.temp_f
     currentObj.currentCity = data.location.name
@@ -84,7 +85,7 @@ enter.addEventListener('click', function(){
         }
         // console.log(hottestDay)
         
-    
+        userInput.value =  ""
     // console.log(forecast, "FORECAST");
     updateUI()
 })
@@ -123,6 +124,7 @@ function createThreeDayDivs(){
             document.querySelector(".three-day-container").appendChild(newDiv);
             hottestElement.textContent = `${hottestDay} will be the hottest day `
     })
+    arrayOfThree = [];
     // for(let i = 0; i<arrayOfThree.length; i++){
     //         let newDiv = document.createElement("div")
     //         newDiv.innerHTML = `
