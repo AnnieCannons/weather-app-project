@@ -1,3 +1,13 @@
+console.log('main.js running!');
+
+const getAllCities =  async () => {
+  let cities = await fetch('http://localhost:3000/get-cities');
+  let citiesParsed = await cities.json();
+  console.log(citiesParsed);
+  return citiesParsed;
+}
+getAllCities() 
+
 function myFunction() {
   var x = document.getElementById("hide");
   if (x.style.display === "none") {
@@ -6,6 +16,8 @@ function myFunction() {
     x.style.display = "none";
   }
 }
+
+
 
 let weather = {
   apiKey: "9f59f504483746d7b6b183745232909",
