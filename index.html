@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./styles.css" rel="stylesheet">
+    <script defer src="scripts.js"></script>
+</head>
+
+<body>
+    <div class="header-container">
+        <div>
+            <h1 class="header-div">Local Weather Report</h1>
+        </div>
+        <div class="input-div">
+            <input type="text" id="enter-city-name" placeholder="Enter City Name"></input>
+        </div>
+        <div class="button-div">
+            <button type="button" id="city-search-button">Search</button>
+        </div>
+    </div>
+    <div class="current-container">       
+        <div class="current-temp-container hidden">
+            <h1 id="current-temp-header"></h1>
+            <div class="city-state-country-wrapper">
+                <p id="city"></p>
+                <p id="state"></p>
+                <p id="country"></p>
+            </div>
+            <p id="current-temp"></p>
+            <p id="current-high"></p>
+            <p id="current-low"></p>
+            <p id="current-precipitation"></p>
+
+        </div>
+        <div class="temp-type-container hidden">
+           <p id="temp-type"></p>
+        </div>
+       
+    </div>
+    <div class="forecast-container">
+        <!-- select this in your js -->
+    </div>
+    <div class="three-day-container">
+        <div class="day-two-container hidden">
+            <p id="day-of-week-2"></p>
+            <p id="day-two-temp"></p>
+            <p id="day-two-high"></p>
+            <p id="day-two-low"></p>
+            <p id="day-two-precipitation"></p>
+           
+        </div>
+        <div class="day-three-container hidden">
+            <p id="day-of-week-3"></p>
+            <p id="day-three-temp"></p>
+            <p id="day-three-high"></p>
+            <p id="day-three-low"></p>
+            <p id="day-three-precipitation"></p>
+          
+        </div>
+        <div class="day-four-container hidden">
+            <p id="day-of-week-4"></p>
+            <p id="day-four-temp"></p>
+            <p id="day-four-high"></p>
+            <p id="day-four-low"></p>
+            <p id="day-four-precipitation"></p>
+         
+        </div>
+    </div>
+    <div class="hottest-day-container hidden">
+        <p id="hottest-day"></p>
+    </div>
+    <div class="sprite-container">
+        <p id="sprite-img"></p>
+    </div>
+</body>
+
+</html>

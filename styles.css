@@ -1,0 +1,206 @@
+
+
+body {
+    background-image: radial-gradient(rgb(28, 28, 152), rgb(187, 187, 191));
+    background-repeat: no-repeat;
+    height: 180vh;
+   
+}
+
+p {
+    font-family: Arial;
+    font-size: 25px;
+    color: whitesmoke
+}
+
+h1 {
+    font-family: Arial;
+    color: whitesmoke;
+    font-size: 50px;
+}
+
+.header-container  {
+    display: flex;
+
+    justify-content: space-around;
+
+}
+
+h1.header-div{
+    color: white;
+    font-weight: bold;
+ font-stretch:extra-expanded;
+}
+.header-div {
+ 
+   margin-left: 20px;
+   font-size: 50px;
+   font-family: Arial;
+   font-weight: lighter;
+ 
+}
+
+
+
+.input-div {
+  
+   margin: auto;
+  
+}
+
+#enter-city-name {
+padding: 20px;
+width: 500px;
+
+}
+
+button#city-search-button{
+    background-color: white;
+    border-radius: 10px;
+}
+#city-search-button {
+ padding: 15px;
+ width: 150px;
+}
+
+.button-div {
+  
+    margin: auto;
+    
+}
+
+.city-state-country-wrapper {
+    display: flex;
+  
+    
+    
+ 
+}
+
+
+
+.city-state-country-wrapper p  {
+display: flex;
+   margin: 3px;
+}
+
+.current-container {
+    display: flex;
+    margin: auto;
+    width: 80%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.current-temp-container {
+    border: 2px solid whitesmoke;
+    border-radius: 30px;
+    margin-top: 5%;
+    padding: 50px;
+    text-align: center;
+    flex: 0 0 auto;
+    justify-content: space-around
+   
+}
+
+.three-day-container {
+  
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.day-two-container {
+    border: 2px solid whitesmoke;
+    border-radius: 30px;
+    text-align: center;
+    padding: 20px
+   
+}
+.day-three-container {
+    border: 2px solid whitesmoke;
+    border-radius: 30px;
+    text-align: center;
+    padding: 20px
+   
+}
+.day-four-container {
+   border: 2px solid whitesmoke;
+   border-radius: 30px;
+   text-align: center;
+   padding: 20px
+   
+}
+
+#current-temp {
+    font-size: 70px;
+    font-weight: bold;
+    
+}
+
+#day-two-temp {
+font-size: 50px;
+font-weight: bold;
+padding-left: 2em;
+padding-right: 2em;
+
+
+}
+
+#day-three-temp {
+    font-size: 50px;
+    font-weight: bold;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+#day-four-temp {
+    font-size: 50px;
+    font-weight: bold;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.temp-type-container {
+    display: flex;
+    border:2px solid whitesmoke;
+    border-radius: 30px;
+ text-align: center;
+ flex: 0 0 auto;
+ padding: 2em;
+ 
+ 
+
+   
+}
+
+#temp-type {
+    font-size: 40px;
+}
+
+
+.hottest-day-container{
+    display: flex;
+    justify-content: space-around;
+}
+#hottest-day {
+    border: 2px solid whitesmoke;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 80px; 
+    justify-content: center;
+    padding-left: 2em;
+    padding-right: 2em;
+ }
+
+ .temp-type-container img {
+    width: 75px;
+    height: 75px; 
+ }
+
+
+
+ 
+ .hidden{
+    display: none;
+} 
