@@ -37,7 +37,10 @@ let tempTypeContainer = document.querySelector(".temp-type-container");
 let dayTwoContainer = document.querySelector(".day-two-container");
 let dayThreeContainer = document.querySelector(".day-three-container");
 let dayFourContainer = document.querySelector(".day-four-container");
-let hottestDayContainer = document.querySelector(".hottest-day-container")
+let hottestDayContainer = document.querySelector(".hottest-day-container");
+
+let displayedCitiesContainer = document.querySelector(".display-cities-container");
+let displayedCitiesText = document.getElementById("displayed-city");
 
 
 
@@ -58,6 +61,40 @@ let fourDayForecastTemps = [];
 let hottestDay = 0;
 
 
+const getAllCities =  async () => {
+    let cities = await fetch('http://localhost:3000/get-cities');
+    let citiesParsed = await cities.json();
+    console.log(citiesParsed);
+    return citiesParsed;
+  }
+ // This function is called when app first loads, you will call this function in your JavaScript file. You might call it inside of another function.
+ 
+ const displayAllCities = async() => {
+    let getAllCitiesCall = await getAllCities();
+    console.log(getAllCitiesCall[1].id);
+    displayedCitiesText.innerHTML = getAllCitiesCall.map(function(cities) {
+        return '<li>' + cities.city_name + '</li>';
+        
+    });
+    }
+    displayAllCities()
+
+
+
+  const createCity =  async (cityFromUser) => {
+    let city = await fetch('http://localhost:3000/create-city',{
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
+    body:{cityName: cityFromUser } 
+    });
+    let cityParsed = await city.json();
+    console.log(cityParsed);
+    return cityParsed;
+  }
+
 
 
 //Buttons
@@ -66,6 +103,7 @@ citySearchButton.addEventListener("click", function(){
   
     let cityFromUser = userInput.value;
     console.log(cityFromUser);
+    createCity(cityFromUser);
     threeDayForecast = [];
   fetch(`http://api.weatherapi.com/v1/forecast.json?key=696546d3da0e4fff847182411232609&q=${cityFromUser}&days=4`)
     .then(response => response.json())
@@ -121,21 +159,6 @@ citySearchButton.addEventListener("click", function(){
 
 //Functions
 
-const getAllCities =  async () => {
-    let cities = await fetch('http://localhost:3000/get-cities');
-    let citiesParsed = await cities.json();
-    console.log(citiesParsed);
-    return citiesParsed;
-  }
-  getAllCities() // This function is called when app first loads, you will call this function in your JavaScript file. You might call it inside of another function.
-
-  const createCity =  async () => {
-    let city = await fetch('http://localhost:3000/create-city');
-    let cityParsed = await city.json();
-    console.log(cityParsed);
-    return cityParsed;
-  }
- createCity()
 
 function getDayOfWeek(dateString) {
     // Parse the input date as UTC to avoid time discrepancies
@@ -172,6 +195,9 @@ function updateUI() {
     currentPrecipitationParagraph.textContent = "Chance of Precipitation: " + weatherToday.precipitation + "%";
     
     
+   
+    
+      
     //For three day forecast
     // for(){
     //     forecastDiv.innerHTML(
