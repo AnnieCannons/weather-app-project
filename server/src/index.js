@@ -40,8 +40,9 @@ const createCity = async (cityName) => {
   
   
   app.post('/create-city', async(req, res) => {
+    console.log('test');
     const city = await createCity(req.body.cityName);
-    res.send(city)
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5501').send(city);
   });
 
 app.listen(port, () => {
