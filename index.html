@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <header>
+    <p>Local Weather Report</p>
+    <div class="info-land">
+      <input type="text"  id='location' placeholder="Enter City Name">
+      <button onclick="fetchData()">Search</button>
+    </div>
+  </header>
+  <div class="temp">
+  <div class="data">
+    <h2>Current Temp</h2>
+    <p id="region"></p>
+    <p id="Current Temp"></p>
+    <p id="highlow"></p>
+    <p id="precipitation"></p>
+  </div>
+  <div class="weather">
+    <h2 id="weathermsg"></h2>
+  </div>
+</div>
+</body>
+</html>
