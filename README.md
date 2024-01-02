@@ -10,6 +10,9 @@ The purpose of this assignment is to bring together everything you have learned 
 
 ## Learning Objectives
 
+
+
+#### Functionality
 To complete this project, students will need to demonstrate skills in:
 
 - manipulating a user interface with the JS DOM API
@@ -17,9 +20,6 @@ To complete this project, students will need to demonstrate skills in:
 - laying out a user interface with CSS Grid and CSS Flexbox
 
 ## Rubric
-
-#### Functionality
-
 The app meets all of the following user stories:
 
 - The user can enter a city name in an input box and press a submit button to see the following information for the searched city:
